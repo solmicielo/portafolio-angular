@@ -12,8 +12,7 @@ export class CabeceraComponent implements OnInit {
   constructor(private datosPortafolio:PortafolioService) { }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatos().subscribe(data => {
-      console.log(data);
+    this.datosPortafolio.obtenerDatos().subscribe(data => {      
       this.miPorfolio = data;
     });
   }

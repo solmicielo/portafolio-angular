@@ -1,47 +1,97 @@
 {
-    "nombre": "June Smith",
+    "nombre": "Alejandro Ibars",
     "profesion": "Desarrolladora Full Stack",
     "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem corporis esse tempore provident ex ad, nobis praesentium quisquam aliquid omnis nam ab modi temporibus nesciunt, ipsum dolore deleniti quos ipsa.",
     "foto": "/assets/img/june-smith-portafolio.jpg",
 
     "redes": {
-        "linkedin": "linkedin",
-        "github": "github",
-        "correo": "correo",
-        "whatsapp": "whatsapp"
+        "linkedin": "https://www.linkedin.com/in/solcarretero-ilustradora/",
+        "github": "https://github.com/solmicielo",
+        "correo": "carreterosoledad@gmail.com",
+        "whatsapp": "5493512755845"
     },
 
-    "experiencia":[{
-        "puesto": "puesto",
-        "empresa": "empresa",
-        "descripcion": "descripcion",
-        "inicio": "inicio",
-        "fin": "fin"
-    }],
+    "experiencia":[
+        {
+            "puesto": "Cargo del puesto 1",
+            "empresa": "Nombre de la empresa 1",
+            "descripcion": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+            "inicio": "inicio1",
+            "fin": "fin1"  
+        },
 
-    "formacion":[{
-        "estudio": "estudio",
-        "escuela": "escuela",
-        "inicio": "inicio",
-        "fin": "fin"
-    }],
+        {
+            "puesto": "Cargo del puesto 2",
+            "empresa": "Nombre de la empresa 2",
+            "descripcion": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+            "inicio": "inicio2",
+            "fin": "fin2"  
+        },
+
+        {
+            "puesto": "Cargo del puesto 3",
+            "empresa": "Nombre de la empresa 3",
+            "descripcion": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+            "inicio": "inicio3",
+            "fin": "fin3"  
+        }
+        
+        
+    ],
+
+    "formacion":[
+        {
+            "estudio": "Titulo del estudio 1",
+            "escuela": "escuela1",
+            "inicio": "inicio1",
+            "fin": "fin1"       
+        },
+
+        {
+            "estudio": "Titulo del estudio 2",
+            "escuela": "Nombre de la escuela 2",
+            "inicio": "inicio2",
+            "fin": "fin2"       
+        },
+
+        {
+            "estudio": "Titulo del estudio 3",
+            "escuela": "Nombre de la escuela 3",
+            "inicio": "inicio3",
+            "fin": "fin3"       
+        },
+
+        {
+            "estudio": "Titulo del estudio 4",
+            "escuela": "Nombre de la escuela 4",
+            "inicio": "inicio4",
+            "fin": "fin4"       
+        },
+
+        {
+            "estudio": "Titulo del estudio 5",
+            "escuela": "Nombre de la escuela 5",
+            "inicio": "inicio5",
+            "fin": "fin5"       
+        }
+    ],
 
     "skills":{
         "profesional": [{
-            "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "nombre":"Creatividad",
+            "porcentaje": 84
         },
         {
-            "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "nombre":"Comunicación",
+            "porcentaje": 46
         },
         {
-            "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "nombre":"Trabajo en equipo",
+            "porcentaje": 38
         },
         {
-            "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "nombre":"Gestión de proyectos",
+            "porcentaje": 17
         }
 
     ]},
@@ -63,11 +113,50 @@
         }
     ],
     
-    "proyectos":[{
-        "img": "img",
-        "titulo": "titulo",
-        "repo": "repo",
-        "demo": "demo"
-    }]    
+    "proyectos":[
+        {
+            "img": "/assets/img/Portfolio-01.png",
+            "titulo": "Titulo del Proyecto 1",
+            "repo": "#",
+            "demo": "#"
+        },
+
+        {
+            "img": "/assets/img/Portfolio-02.png",
+            "titulo": "Titulo del Proyecto 2",
+            "repo": "#",
+            "demo": "#"
+        },
+
+        {
+            "img": "/assets/img/Portfolio-03.png",
+            "titulo": "Titulo del Proyecto 3",
+            "repo": "#",
+            "demo": "#"
+        },
+
+        {
+            "img": "/assets/img/Portfolio-04.png",
+            "titulo": "Titulo del Proyecto 4",
+            "repo": "#",
+            "demo": "#"
+        },
+
+        {
+            "img": "/assets/img/Portfolio-05.png",
+            "titulo": "Titulo del Proyecto 5",
+            "repo": "#",
+            "demo": "#"
+        },
+
+        {
+            "img": "/assets/img/Portfolio-06.png",
+            "titulo": "Titulo del Proyecto 6",
+            "repo": "#",
+            "demo": "#"
+        }
+
+
+    ]    
 
 }

@@ -15,55 +15,18 @@
                              
             <div class="cada-skill pb-md-4 mb-md-5">                 
 
-              <div class="candidatos">
+              <div *ngFor="let skill of skillsProfesional" class="candidatos">
                 <div class="parcial">
                   <div class="info">
-                    <div class="nombre">Creatividad</div>
-                    <div class="porcentaje-num">86%</div>
+                    <div class="nombre">{{skill.nombre}}</div>
+                    <div class="porcentaje-num">{{skill.porcentaje}}%</div>
                   </div>
                   <div class="barra-de-progreso">
-                    <div class="animacion" style="width:86%;"></div>
+                    <div class="animacion" style="width:{{skill.porcentaje}}%;"></div>
                   </div>
                 </div>
               </div>
-
-              <div class="candidatos">
-                <div class="parcial">
-                  <div class="info">
-                    <div class="nombre">Comunicación</div>
-                    <div class="porcentaje-num">46%</div>
-                  </div>
-                  <div class="barra-de-progreso">
-                    <div class="animacion" style="width:46%;"></div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="candidatos">
-                <div class="parcial">
-                  <div class="info">
-                    <div class="nombre">Trabajo en equipo</div>
-                    <div class="porcentaje-num">38%</div>
-                  </div>
-                  <div class="barra-de-progreso">
-                    <div class="animacion" style="width:38%;"></div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="candidatos">
-                <div class="parcial">
-                  <div class="info">
-                    <div class="nombre">Gestión de proyectos</div>
-                    <div class="porcentaje-num">17%</div>
-                  </div>
-                  <div class="barra-de-progreso">
-                    <div class="animacion" style="width:17%;"></div>
-                  </div>
-                </div>
-              </div>                 
+                            
 
             </div>
           </div>              

@@ -7,15 +7,15 @@
     
     <div class="row justify-content-center align-items-start">
 
-      <div class="card px-0  border-warning m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio-01.png" class="card-img-top" alt="...">            
+      <div *ngFor="let proyecto of proyectosList" class="card px-0  border-warning m-4" style="width: 18rem;">            
+        <img [src]="proyecto.img" class="card-img-top" alt="...">            
         <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
+          <h5 class="card-title text-center text-uppercase ">{{proyecto.titulo}}</h5>              
         </div>            
         <div class="py-2 text-center">
           <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
+            <a href="{{proyecto.repo}}" target="_blank"><button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button></a>                
+            <a href="{{proyecto.demo}}" target="_blank"><button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button></a>
           </div>                         
         </div>
         <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
@@ -23,97 +23,8 @@
           <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
         </div>
         <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>
-      
-      <div class="card  border-warning px-0 m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio–02.png" class="card-img-top" alt="...">            
-        <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
-        </div>            
-        <div class="py-2 text-center">
-          <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
-          </div>                         
-        </div>
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-primary"><i class="bi bi-pencil "></i></button>              
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
-        </div>
-        <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>  
-
-      <div class="  card border-warning px-0 m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio-03.png" class="card-img-top" alt="...">            
-        <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
-        </div>            
-        <div class="py-2 text-center">
-          <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
-          </div>                         
-        </div>
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-primary"><i class="bi bi-pencil "></i></button>              
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
-        </div>
-        <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>  
-
-      <div class=" card border-warning px-0 m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio-04.png" class="card-img-top" alt="...">            
-        <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
-        </div>            
-        <div class="py-2 text-center">
-          <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
-          </div>                         
-        </div>
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-primary"><i class="bi bi-pencil "></i></button>              
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
-        </div>
-        <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>
-      
-      <div class=" card border-warning px-0 m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio-05.png" class="card-img-top" alt="...">            
-        <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
-        </div>            
-        <div class="py-2 text-center">
-          <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
-          </div>                         
-        </div>
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-primary"><i class="bi bi-pencil "></i></button>              
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
-        </div>
-        <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>  
-
-      <div class=" card border-warning px-0 m-4" style="width: 18rem;">            
-        <img src="\assets\img\Portfolio-06.png" class="card-img-top" alt="...">            
-        <div class="card-body border-warning border-bottom">
-          <h5 class="card-title text-center text-uppercase ">Titulo del Proyecto</h5>              
-        </div>            
-        <div class="py-2 text-center">
-          <div class="btn-group " role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-dark"><i class="bi bi-github fs-5 me-2"></i>Repositorio</button>                
-            <button type="button" class="btn btn-dark"> Live Demo<i class="bi bi-arrow-up-right-circle fs-5 ms-2"></i></button>
-          </div>                         
-        </div>
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-primary"><i class="bi bi-pencil "></i></button>              
-          <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>               
-        </div>
-        <button type="button" class="btn btn-warning "><i class="bi bi-arrows-move fs-4"></i></button> 
-      </div>           
+      </div>    
+               
 
 
     </div>
