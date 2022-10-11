@@ -1,0 +1,73 @@
+{
+    "nombre": "June Smith",
+    "profesion": "Desarrolladora Full Stack",
+    "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem corporis esse tempore provident ex ad, nobis praesentium quisquam aliquid omnis nam ab modi temporibus nesciunt, ipsum dolore deleniti quos ipsa.",
+    "foto": "/assets/img/june-smith-portafolio.jpg",
+
+    "redes": {
+        "linkedin": "linkedin",
+        "github": "github",
+        "correo": "correo",
+        "whatsapp": "whatsapp"
+    },
+
+    "experiencia":[{
+        "puesto": "puesto",
+        "empresa": "empresa",
+        "descripcion": "descripcion",
+        "inicio": "inicio",
+        "fin": "fin"
+    }],
+
+    "formacion":[{
+        "estudio": "estudio",
+        "escuela": "escuela",
+        "inicio": "inicio",
+        "fin": "fin"
+    }],
+
+    "skills":{
+        "profesional": [{
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        }
+
+    ]},
+        "tecnicas":[{
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": "Porcentaje"
+        }
+    ],
+    
+    "proyectos":[{
+        "img": "img",
+        "titulo": "titulo",
+        "repo": "repo",
+        "demo": "demo"
+    }]    
+
+}
