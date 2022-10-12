@@ -1,5 +1,5 @@
 {
-    "nombre": "Alejandro Ibars",
+    "nombre": "Sol Carretero",
     "profesion": "Desarrolladora Full Stack",
     "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem corporis esse tempore provident ex ad, nobis praesentium quisquam aliquid omnis nam ab modi temporibus nesciunt, ipsum dolore deleniti quos ipsa.",
     "foto": "/assets/img/june-smith-portafolio.jpg",
@@ -76,40 +76,42 @@
         }
     ],
 
-    "skills":{
-        "profesional": [{
+    "skillsProfesional": [
+        {
             "nombre":"Creatividad",
-            "porcentaje": 84
+            "porcentaje":"width:84%;"
         },
         {
             "nombre":"Comunicación",
-            "porcentaje": 46
+            "porcentaje": "width:56%;"
         },
         {
             "nombre":"Trabajo en equipo",
-            "porcentaje": 38
+            "porcentaje": "width:38%;"
         },
         {
             "nombre":"Gestión de proyectos",
-            "porcentaje": 17
+            "porcentaje":"width:95%;"
         }
 
-    ]},
-        "tecnicas":[{
+    ],
+
+    "skillsTecnicas":[
+        {
             "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "porcentaje": 48
         },
         {
             "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "porcentaje": 55
         },
         {
             "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "porcentaje": 75
         },
         {
             "nombre":"Nombre",
-            "porcentaje": "Porcentaje"
+            "porcentaje": 95
         }
     ],
     

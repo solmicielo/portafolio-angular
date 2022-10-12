@@ -7,9 +7,9 @@
       <div class="col-sm-12  col-md-6  position-relative ps-md-5">
         <div class="row my-3 my-md-5 align-items-center my-5">
           <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades Profesionales</h2>
-          <div class="col-12    text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-pencil-square fs-5 me-4"></i>editar habilidades profesionales</button></div>             
-      
+          <div class="col-12    text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-pencil-square fs-5 me-4"></i>editar habilidades profesionales</button></div> 
         </div> 
+
         <div class="mh-skills-inner pt-md-3">
           <div class="mh-profesional-skills">              
                              
@@ -22,7 +22,7 @@
                     <div class="porcentaje-num">{{skill.porcentaje}}%</div>
                   </div>
                   <div class="barra-de-progreso">
-                    <div class="animacion" style="width:{{skill.porcentaje}}%;"></div>
+                    <div class="animacion" [style]="skill.porcentaje" ></div>
                   </div>
                 </div>
               </div>
@@ -40,41 +40,40 @@
           <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades técnicas</h2>
           <div class="col-12    text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-pencil-square fs-5 me-4"></i>editar habilidades técnicas</button></div>              
       
-        </div> 
-        <div class="mh-professional-skills ">             
-          <ul class="mh-professional-progress ">
-            <li>                  
-              <div class="mh-progress mh-progress-circle" data-progress="95"></div>
-              <div class="pr-skill-name">Javascript</div>
-              <div class="col-md-2">
-                <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-                  <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
-                  <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>               
-                </div>
-             </div> 
-            </li>
-
-            <li>
-              <div class="mh-progress mh-progress-circle" data-progress="55"></div>
-              <div class="pr-skill-name">Java</div>
-            </li>
-
-            <li>
-              <div class="mh-progress mh-progress-circle" data-progress="86"></div>
-              <div class="pr-skill-name">PHP</div>
-            </li>
-
-            <li>
-              <div class="mh-progress mh-progress-circle" data-progress="69"></div>
-              <div class="pr-skill-name">Python</div>
-            </li>
-          </ul>
         </div>
-      </div>      
-        
 
-        
+        <div class="mh-profesional-skills"> 
+          <div *ngFor="let skill of skillsTecnico" class="cada-circulo">
+            <div  class="mh-progress cada-circulo">
+              <circle-progress 
+                  [percent]="skill.porcentaje"
+                  [space]="-7"
+                  [radius]="60"                 
+                  [outerStrokeWidth]="7"
+                  [innerStrokeWidth]="7"
+                  [outerStrokeColor]="'#ffc107'"
+                  [innerStrokeColor]="'rgb(16, 18, 20)'"
+                  [title]= "'auto'"
+                  [titleColor]="'#ffffff'" 
+                  [unitsColor]="'#ffffff'"
+                  [unitsFontSize]="'17'"                                 
+                  [showSubtitle]="false"
+                  [animation]= "true"
+                  [animationDuration]="600"
+                  [responsive]="true"        
       
+                ></circle-progress>
+
+              <div class="pr-skill-name">{{skill.nombre}}</div>
+            </div>         
+            
+          </div>
+
+
+          
+        </div>
+        
+      </div>
     </div>
 
   </section>

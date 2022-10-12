@@ -7,13 +7,13 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  miPorfolio:any;
+  menuRedes:any;
 
   constructor(private datosPortafolio:PortafolioService) { }
 
   ngOnInit(): void {
     this.datosPortafolio.obtenerDatos().subscribe(data => {
-      this.miPorfolio= data.redes;
+      this.menuRedes=data.redes;
     });
   }
 

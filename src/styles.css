@@ -111,7 +111,7 @@
   margin-bottom: 60px;
 }
 
-.mh-professional-progress li {
+.cada-circulo {
   display: inline-block;
   margin: 0 auto;
   float: none;
@@ -146,19 +146,13 @@
   font-family:'Poppins', sans-serif ;
 }
 
-.mh-progress.mh-progress-circle {
+.mh-progress.cada-circulo {
   display: inline-block;
   width: 100px;
   height: 100px;
 }
 
-.mh-progress path:nth-child(1) {
-  stroke: rgba(0,0,0,0.7);
-}
 
-.mh-progress path:nth-child(2) {
-  stroke: #ffc107 !important;
-}
 
 .candidatos{
   position: relative;
@@ -214,9 +208,9 @@
   border-top-right-radius: 10px;  
   border-bottom-right-radius: 10px;
   background: #ffc107 ;
-  -webkit-transition: 1.5s all;
-  -webkit-animation-duration: 1.5s;
-  -webkit-animation-name: animationProgress;
+  transition: 1.5s all;
+  animation-duration: 1.5s;
+  animation-name: animationProgress;
   font-family:'Poppins', sans-serif ;
 } 
 
