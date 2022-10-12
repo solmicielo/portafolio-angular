@@ -79,19 +79,19 @@
     "skillsProfesional": [
         {
             "nombre":"Creatividad",
-            "porcentaje":"width:84%;"
+            "porcentaje":84
         },
         {
             "nombre":"Comunicación",
-            "porcentaje": "width:56%;"
+            "porcentaje": 56
         },
         {
             "nombre":"Trabajo en equipo",
-            "porcentaje": "width:38%;"
+            "porcentaje": 38
         },
         {
             "nombre":"Gestión de proyectos",
-            "porcentaje":"width:95%;"
+            "porcentaje":95
         }
 
     ],

@@ -13,6 +13,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { PortafolioService } from './servicios/portafolio.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [PortafolioService],
   bootstrap: [AppComponent]

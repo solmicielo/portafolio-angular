@@ -13,7 +13,7 @@
         <div class="mh-skills-inner pt-md-3">
           <div class="mh-profesional-skills">              
                              
-            <div class="cada-skill pb-md-4 mb-md-5">                 
+            <div class="cada-skill pb-md-4 mb-md-4">                 
 
               <div *ngFor="let skill of skillsProfesional" class="candidatos">
                 <div class="parcial">
@@ -22,10 +22,16 @@
                     <div class="porcentaje-num">{{skill.porcentaje}}%</div>
                   </div>
                   <div class="barra-de-progreso">
-                    <div class="animacion" [style]="skill.porcentaje" ></div>
+                    <mat-progress-bar 
+                      mode="determinate" 
+                      [value]="skill.porcentaje" 
+                      color="accent"
+                      buffer= "0"
+                    ></mat-progress-bar>
                   </div>
                 </div>
               </div>
+
                             
 
             </div>
