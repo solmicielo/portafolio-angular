@@ -25,10 +25,10 @@
 }
 
 .photo-frame::before {
-   --box-size: 3em;
-   background-image: radial-gradient(var(--color-blue-medium) 50%, var(--color-purple)50%);
-   top: calc(99% - ( var(--box-size) / 2));
-   right: calc(99% - ( var(--box-size) / 2)); ;
+    --box-size: 3em;
+    background-image: radial-gradient(var(--color-blue-medium) 50%, var(--color-purple)50%);
+    top: calc(99% - ( var(--box-size) / 2));
+    right: calc(99% - ( var(--box-size) / 2)); ;
 }
 
 .photo-frame::after {
@@ -36,16 +36,16 @@
     background: linear-gradient(45deg, var(--color-gray-medium) 45%, transparent 45%), radial-gradient(var(--color-purple)30%, var(--color-yellow)30% 70%, var(--color-gray-medium)70%, transparent 70%);    
     bottom: calc(98% - ( var(--box-size) / 2));
     left:  calc(99% - ( var(--box-size) / 2)); ;
- }
+}
 
- @keyframes turnZ {
+@keyframes turnZ {
     to {
         transform:rotate(1turn) ;
- }
+}
 }
 
 .header-main {
-  margin-top: 15% !important;
+    margin-top: 15% !important;
       
 }
 
@@ -66,19 +66,18 @@
   font-size: 11px;} 
 
   .header-main {
-    margin-top: 25%;
-           
+    margin-top: 25%;           
   }
 
-   
 
- .tarjeta{
+
+.tarjeta{
   border-bottom-left-radius:0;
   border-top-right-radius:0.375rem;
   }
   
- } 
- 
+} 
+
 
 
 

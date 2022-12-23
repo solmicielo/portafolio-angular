@@ -1,0 +1,53 @@
+<div class="container w-75  mt-5 rounded shadow">
+    <div class="row aling-items-strech">
+        <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+            
+        </div>
+        <div class="col  py-4">            
+            <h2 class="fw-bold text-center py-3">Bienvenido </h2>
+            <form [formGroup]="form" class="col-10 col-sm-8 col-md-8 mx-auto" action="/" method="GET">
+                <div class="mx-auto">
+                    <mat-form-field class="casilla" appearance="outline" color="accent">
+                        <mat-label>Nombre de Usuario</mat-label>
+                        <input formControlName="user" matInput placeholder="Usuario">                                              
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        <mat-error *ngIf="Usuario?.touched && Usuario?.errors?.['required']">El campo Usuario es requerido</mat-error>
+                        <mat-error *ngIf="Usuario?.touched && Usuario?.errors?.['minlength']">El Usuario debe tener  6 caracteres o mas </mat-error>                                                               
+                    </mat-form-field>                    
+                        
+                        
+                        
+                    </div>                    
+                
+                <div class="">
+                    <mat-form-field class="casilla" appearance="outline" color="accent">
+                        <mat-label>Ingresa tu correo</mat-label>
+                        <input formControlName="email" matInput placeholder="pat@example.com"  required>
+                        <mat-icon matSuffix>local_post_office</mat-icon>
+                        <mat-error *ngIf="Email?.touched && Email?.errors?.['required']">El campo Correo es requerido</mat-error>
+                        <mat-error *ngIf="Email?.touched && Email?.errors?.['email']">El formato de correo debe ser Valido</mat-error>
+                        
+                        
+                    </mat-form-field>
+                </div>
+                <div class="mb-3">
+                    <mat-form-field class="casilla" appearance="outline" color="accent">
+                        <mat-label>Ingresa tu Contraseña</mat-label>
+                        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                        <button class="iconoOjo" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="Password?.touched && Password?.errors?.['required']">La contraseña es requerida</mat-error>
+                        <mat-error *ngIf="Password?.touched && Password?.errors?.['minlength']">La contraseña debe tener  6 caracteres o mas</mat-error>                       
+                    </mat-form-field>
+
+                </div>
+                <div class="mb-3 ">
+                    <button type="submit" class=" button casilla" mat-raised-button color="accent" [disabled]="form.invalid">Ingresar</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+

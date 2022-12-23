@@ -40,35 +40,40 @@
     ],
 
     "formacion":[
-        {
+        {   
+            "id": 1,
             "estudio": "Titulo del estudio 1",
             "escuela": "escuela1",
             "inicio": "inicio1",
             "fin": "fin1"       
         },
 
-        {
+        {   
+            "id": 2,
             "estudio": "Titulo del estudio 2",
             "escuela": "Nombre de la escuela 2",
             "inicio": "inicio2",
             "fin": "fin2"       
         },
 
-        {
+        {   
+            "id": 3,
             "estudio": "Titulo del estudio 3",
             "escuela": "Nombre de la escuela 3",
             "inicio": "inicio3",
             "fin": "fin3"       
         },
 
-        {
+        {   
+            "id": 4,
             "estudio": "Titulo del estudio 4",
             "escuela": "Nombre de la escuela 4",
             "inicio": "inicio4",
             "fin": "fin4"       
         },
 
-        {
+        {   
+            "id": 5,
             "estudio": "Titulo del estudio 5",
             "escuela": "Nombre de la escuela 5",
             "inicio": "inicio5",

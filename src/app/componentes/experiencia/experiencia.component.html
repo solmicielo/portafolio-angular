@@ -1,28 +1,27 @@
- <!--Experiencia-->
- <section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5 bg-dark" id="Experiencia">
+<!--Experiencia-->
+<section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5 bg-dark" id="Experiencia">
     <div class="row my-3 my-md-5 align-items-center">
       <h2 class="col-12 col-md-6 text-md-start text-center text-white  text-capitalize my-3 px-md-5  ">Experiencia Laboral</h2>
       <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Experiencia</button></div>              
   
-    </div>
-           
+    </div>           
     <div *ngFor="let experiencia of experienciaList" class="card border-light col-11 col-lg-9  mb-4" >
       <div class="row ">         
-       <div class="col-md-10">
-         <div class="card-body">
+        <div class="col-md-10">
+            <div class="card-body">
           <h3 class="card-title">{{experiencia.puesto}}</h3>
           <h4 class="text-uppercase fs-6"><strong>{{experiencia.empresa}}</strong></h4>
           <p class="card-text">{{experiencia.descripcion}}</p>
           <p class="card-text"><small class="text-muted">Desde {{experiencia.inicio}} Hasta {{experiencia.fin}}</small></p>
-         </div>
-       </div>
-       <div class="col-md-2">
+            </div>
+        </div>
+        <div class="col-md-2">
         <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
           <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
           <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
         </div>        
-       </div>
-     </div>
+        </div>
+    </div>
     </div>
 
   

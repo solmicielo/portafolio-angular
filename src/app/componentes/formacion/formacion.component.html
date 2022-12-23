@@ -1,30 +1,29 @@
- <!--Formacion-->
- <section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5" id="Formacion">
+<!--Formacion-->
+<section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5" id="Formacion">
     <div class="row my-3 my-md-5 align-items-center">
-      <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Educación y Formación  </h2>
-      <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-dark text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Estudios</button></div>         
+        <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Educación y Formación  </h2>
+        <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
+            <button (click)="addEditFormacion()" type="button" routerLink="/add" class="btn btn-outline-dark text-uppercase"><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Estudios</button>
+        </div>         
     </div>
-
     <div *ngFor="let estudio of formacionList" class="card col-11 col-sm-9 col-md-5  border-warning m-3" style="max-width: 540px;">
-      <div class="row g-0 ">
-        <div class=" col-2 col-md-2 text-center align-self-center">
-          <i class="bi bi-mortarboard-fill fs-1 fw-bold text-primary"></i>
-        </div>
-        <div class="col-9 col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{estudio.estudio}}</h5>
-            <h4 class="text-uppercase fs-6"><strong>{{estudio.escuela}}</strong></h4>                
-            <p class="card-text text-uppercase"><small class="text-muted"> desde {{estudio.inicio}} hasta {{estudio.fin}}</small></p>
-          </div>
-        </div>
+        <div class="row g-0 ">
+            <div class=" col-2 col-md-2 text-center align-self-center">
+            <i class="bi bi-mortarboard-fill fs-1 fw-bold text-primary"></i>
+            </div>
+            <div class="col-9 col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{estudio.estudio}}</h5>
+                    <h4 class="text-uppercase fs-6"><strong>{{estudio.escuela}}</strong></h4>                
+                    <p class="card-text text-uppercase"><small class="text-muted"> desde {{estudio.inicio}} hasta {{estudio.fin}}</small></p>
+                </div>
+            </div>
         <div class="col-md-2">
-          <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
-            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>               
-          </div>        
+            <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
+                <button type="button" routerLink="/edit/{{estudio.id}}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
+                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>               
+            </div>        
         </div>
-      </div>
+        </div>
     </div>           
-                   
-
-  </section>
+</section>
