@@ -1,1 +1,42 @@
-<p>add-edit-proyectos works!</p>
+<h2 mat-dialog-title>Install Angular</h2>
+<form [formGroup]="form" (ngSubmit)="addEditProyecto()" enctype="multipart/form-data">
+    <mat-dialog-content >    
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Título del Proyecto</mat-label>
+            <input formControlName="titulo" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <mat-icon matSuffix>school</mat-icon>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['required']">El campo Título del Proyecto es requerido</mat-error>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['minlength']">El campo Título del Proyecto debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <div class="mb-4 archivo">
+            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
+            <input formControlName="img" class="form-control archivo "  id="formFileLg" type="file">
+            <mat-error class="error" *ngIf="form.get('img')?.touched && form.get('img')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
+        </div>          
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Link del demo del Proyecto</mat-label>
+            <input formControlName="demo" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <mat-icon matSuffix>launch</mat-icon>
+            <mat-error *ngIf="form.get('demo')?.touched && form.get('demo')?.errors?.['required']">El campo Título del Proyecto es requerido</mat-error>
+            <mat-error *ngIf="form.get('demo')?.touched && form.get('demo')?.errors?.['minlength']">El campo Título del Proyecto debe tener  5 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('demo')?.touched && form.get('demo')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  200 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Link del repositorio del Proyecto</mat-label>
+            <input formControlName="repo" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <i matSuffix class="bi bi-github iconos-input"></i>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['required']">El campo Link del repositorio es requerido</mat-error>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['minlength']">El campo Link del repositorio debe tener  5 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['maxlength']">El campo Link del repositorio debe tener  200 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
+        <button [disabled]="form.invalid" type="submit" mat-button  cdkFocusInitial>Aceptar</button>
+    </mat-dialog-actions>
+</form>

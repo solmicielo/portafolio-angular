@@ -97,6 +97,14 @@
         {
             "nombre":"Gestión de proyectos",
             "porcentaje":95
+        },
+        {
+            "nombre":"Gestión de proyectos",
+            "porcentaje":95
+        },
+        {
+            "nombre":"Gestión de proyectos",
+            "porcentaje":95
         }
 
     ],
@@ -113,6 +121,14 @@
         {
             "nombre":"Nombre",
             "porcentaje": 75
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": 95
+        },
+        {
+            "nombre":"Nombre",
+            "porcentaje": 95
         },
         {
             "nombre":"Nombre",

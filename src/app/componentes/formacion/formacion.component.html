@@ -3,6 +3,7 @@
     <div class="row my-3 my-md-5 align-items-center">
         <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Educación y Formación  </h2>
         <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
+            
             <button (click)="addEditFormacion()" type="button" routerLink="/add" class="btn btn-outline-dark text-uppercase"><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Estudios</button>
         </div>         
     </div>
@@ -13,15 +14,16 @@
             </div>
             <div class="col-9 col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{estudio.estudio}}</h5>
-                    <h4 class="text-uppercase fs-6"><strong>{{estudio.escuela}}</strong></h4>                
-                    <p class="card-text text-uppercase"><small class="text-muted"> desde {{estudio.inicio}} hasta {{estudio.fin}}</small></p>
+                    <h5 class="card-title">{{estudio.nombreEstudio}}</h5>
+                    <h4 class="text-uppercase fs-6"><strong>{{estudio.nombreAcademia}}</strong></h4>
+                    <p>{{estudio.descripcion}}</p>                
+                    <p class="card-text text-uppercase"><small class="text-muted"> desde {{estudio.fechaInicio}} hasta {{estudio.fechaFin}}</small></p>
                 </div>
             </div>
         <div class="col-md-2">
             <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-                <button type="button" routerLink="/edit/{{estudio.id}}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
-                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>               
+                <button (click)="addEditFormacion(estudio.id)" type="button" routerLink="/edit/{{estudio.id}}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
+                <button (click)="borrarEstudio(estudio.id)" type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>               
             </div>        
         </div>
         </div>

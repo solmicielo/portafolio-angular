@@ -1,0 +1,22 @@
+form .archivo {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    box-shadow: none;
+    color: #6a6a6a; 
+
+}
+
+
+form .archivo:focus{
+    border:1px solid #ffd740 ;   
+    
+}
+
+.iconos-input {
+    font-size: 150%;
+    line-height: 1.125;
+}
+
+form  .error {
+    font-size: 75%;
+
+}

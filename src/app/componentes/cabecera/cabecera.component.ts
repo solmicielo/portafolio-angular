@@ -9,12 +9,20 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 export class CabeceraComponent implements OnInit {
   perfil:any;
 
-  constructor(private datosPortafolio:PortafolioService) { }
+  constructor(private _portafolioService:PortafolioService) {
+    this.getPortafolio();
+  }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatos().subscribe(data => {      
-      this.perfil = data;
-    });
+    
+  }
+
+  getPortafolio():void{
+    this._portafolioService.obtenerDatos().subscribe(data => {
+      this.perfil= data;
+      return this.perfil;
+      })
+      ;
   }
 
 }

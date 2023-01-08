@@ -10,8 +10,6 @@ export class Persona {
     correo:String;
     telefono:String;
 
-    
-
     constructor(id:number, nombre_completo:String, profesion:String,sobre_mi:String, url_foto:String,url_linkedin:String, url_github:String, url_curriculum:String, correo:String, telefono:String ){
         this.id = id;
         this.nombre_completo = nombre_completo;

@@ -1,8 +1,65 @@
-<h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">  
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button (click)="cancelar()" mat-button >Cancelar</button>
-    <button mat-button  cdkFocusInitial>Aceptar</button>
-</mat-dialog-actions>
+<div class="cabeceraform">
+    <h2 mat-dialog-title>{{operacion}} Formación</h2>
+    <mat-spinner *ngIf="loading"  color="accent" diameter="40"></mat-spinner>
+</div>
+
+
+<form [formGroup]="form" (ngSubmit)="addEditFormacion()">
+    <mat-dialog-content >    
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Título / Carrera / Curso</mat-label>
+            <input formControlName="titulo" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <mat-icon matSuffix>school</mat-icon>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['required']">El campo Título / Carrera / Curso es requerido</mat-error>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['minlength']">El campo Título / Carrera / Curso debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['maxlength']">El campo Título / Carrera / Curso debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Institución</mat-label>
+            <input formControlName="institucion" matInput placeholder="Ingrese la Institución">
+            <mat-icon matSuffix>domain</mat-icon>
+            <mat-error *ngIf="form.get('institucion')?.touched && form.get('institucion')?.errors?.['required']">El campo Institución es requerido</mat-error>
+            <mat-error *ngIf="form.get('institucion')?.touched && form.get('institucion')?.errors?.['minlength']">El campo Institución debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('institucion')?.touched && form.get('institucion')?.errors?.['maxlength']">El campo Institución debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline" color="accent">
+                    <input [max]="maxDate" formControlName="fechaInicio"  matInput [matDatepicker]="picker1"  placeholder="Fecha  inicio">        
+                    <mat-datepicker-toggle  matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker  #picker1 ></mat-datepicker>
+                    <mat-error *ngIf="form.get('fechaInicio')?.touched && form.get('fechaInicio')?.errors?.['required']">El campo Fecha  inicio es requerido</mat-error>
+                    
+                </mat-form-field> 
+            </div>
+            <div class="col">
+                <mat-form-field  appearance="outline" color="accent">
+                    <input  formControlName="fechaFin"  matInput [matDatepicker]="picker2"  placeholder="Fecha de Fin">        
+                    <mat-datepicker-toggle  matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker  #picker2 ></mat-datepicker>
+                    
+                </mat-form-field>
+                
+
+                <mat-checkbox formControlName="alPresente" class="example-margin">Al presente</mat-checkbox>
+            </div>        
+        </div>
+        <mat-form-field class="example-full-width" appearance="outline" color="accent">
+            <mat-label>Descripción </mat-label>
+            <textarea formControlName="descripcion"  matInput placeholder="Descripción..."></textarea>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['required']">El campo Descripción es requerido</mat-error>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['minlength']">El campo Descripción debe tener  10 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['maxlength']">El campo Descripción debe tener  2500 caracteres o menos </mat-error>
+            
+        </mat-form-field>     
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
+        <button [disabled]="form.invalid" type="submit" mat-button  >Aceptar</button>
+    </mat-dialog-actions>
+</form>
+
+
 

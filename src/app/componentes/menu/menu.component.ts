@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
@@ -7,14 +10,29 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  menuRedes:any;
+  perfil:any= {};
+  estaLogueado = this.auth.elUsuarioEstaLogueado;
 
-  constructor(private datosPortafolio:PortafolioService) { }
+  constructor(private _portafolioService:PortafolioService, private ruta:Router,private auth: AutenticacionService) { }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatos().subscribe(data => {
-      this.menuRedes=data.redes;
-    });
+    
+  }
+
+  getPortafolio():void{
+    this._portafolioService.obtenerDatos().subscribe(data => {
+      this.perfil= data;
+      })
+      ;
+  }
+
+  logIn(){
+    this.ruta.navigate(['/login'])
+  }
+
+  logOut(){
+    localStorage.removeItem('token');
+    this.auth.elUsuarioEstaLogueado = false;
   }
 
 }

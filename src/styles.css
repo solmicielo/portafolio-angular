@@ -7,6 +7,11 @@
     --color-yellow: #fac32c;
   }
 
+/* Menu ------------------------------------------- */ 
+nav .fixed-top {   
+  z-index: 999 important;
+}
+
 /* Cabecera ------------------------------------------- */
 
 
@@ -224,3 +229,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*  -------------------Formularios------------------------*/
+
+.cabeceraform{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.mat-form-field {  
+  width: 100%;
+  margin: auto;
+}
+
+
+
+

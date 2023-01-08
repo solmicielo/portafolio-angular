@@ -2,19 +2,21 @@
 <main id="Proyectos" class="row justify-content-center align-items-center py-5 px-md-5 py-md-5" >
     <div class="row my-3 my-md-5 align-items-center">
       <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Proyectos </h2>
-      <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-dark text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Proyecto</button></div>         
+      <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
+        <button (click)="addEditProyecto()" type="button" class="btn btn-outline-dark text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Proyecto</button>
+      </div>         
     </div> 
     
     <div  class="row justify-content-center align-items-start">
       <div *ngFor="let proyecto of proyectosList" class="card px-0  border-warning m-4" style="width: 18rem;">            
-        <img [src]="proyecto.img" class="card-img-top" alt="...">            
+        <img [src]="proyecto.urlImg" class="card-img-top" alt="...">            
         <div class="card-body border-warning border-bottom">
           <h5 class="card-title text-center text-uppercase ">{{proyecto.titulo}}</h5>              
         </div>            
         <div class="py-2 text-center">
           <div class="btn-group btn-group-sm" role="group" aria-label="Default button group">
-            <button type="button" class="btn btn-outline-dark "><i class="bi bi-github  me-2 "></i><a href="{{proyecto.repo}}" target="_blank"></a>Repositorio</button>               
-            <button type="button" class="btn btn-dark "> Live Demo<i class="bi bi-arrow-up-right-circle  ms-2"></i><a href="{{proyecto.demo}}" target="_blank"></a></button>
+            <button type="button" class="btn btn-outline-dark "><i class="bi bi-github  me-2 "></i><a href="{{proyecto.urlRepositorio}}" target="_blank"></a>Repositorio</button>               
+            <button type="button" class="btn btn-dark "> Live Demo<i class="bi bi-arrow-up-right-circle  ms-2"></i><a href="{{proyecto.urlLive}}" target="_blank"></a></button>
           </div>                         
         </div>
         <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">

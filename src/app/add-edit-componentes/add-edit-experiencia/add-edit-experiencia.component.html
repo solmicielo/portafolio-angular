@@ -1,1 +1,57 @@
-<p>add-edit-experiencia works!</p>
+<h2 mat-dialog-title>Install Angular</h2>
+<form [formGroup]="form" (ngSubmit)="addEditExperiencia()">
+    <mat-dialog-content >    
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Puesto</mat-label>
+            <input formControlName="puesto" matInput placeholder="Ingrese Puesto">
+            <mat-icon matSuffix>work_outline</mat-icon>
+            <mat-error *ngIf="form.get('puesto')?.touched && form.get('puesto')?.errors?.['required']">El campo Puesto es requerido</mat-error>
+            <mat-error *ngIf="form.get('puesto')?.touched && form.get('puesto')?.errors?.['minlength']">El campo Puesto debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('puesto')?.touched && form.get('puesto')?.errors?.['maxlength']">El campo Puesto debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Nombre de la empresa</mat-label>
+            <input formControlName="empresa" matInput placeholder="Ingrese el Nombre de la empresa">
+            <mat-icon matSuffix>domain</mat-icon>
+            <mat-error *ngIf="form.get('empresa')?.touched && form.get('empresa')?.errors?.['required']">El campo Nombre de la empresa es requerido</mat-error>
+            <mat-error *ngIf="form.get('empresa')?.touched && form.get('empresa')?.errors?.['minlength']">El campo Nombre de la empresa debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('empresa')?.touched && form.get('empresa')?.errors?.['maxlength']">El campo Nombre de la empresa debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline" color="accent">
+                    <input [max]="maxDate" formControlName="fechaInicio"  matInput [matDatepicker]="picker1"  placeholder="Fecha  inicio">        
+                    <mat-datepicker-toggle  matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker  #picker1 ></mat-datepicker>
+                    <mat-error *ngIf="form.get('fechaInicio')?.touched && form.get('fechaInicio')?.errors?.['required']">El campo Fecha  inicio es requerido</mat-error>
+                    
+                </mat-form-field> 
+            </div>
+            <div class="col">
+                <mat-form-field  appearance="outline" color="accent">
+                    <input [disabled]="form.value.alPresente" formControlName="fechaFin"  matInput [matDatepicker]="picker2"  placeholder="Fecha de Fin">        
+                    <mat-datepicker-toggle  matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker  #picker2 ></mat-datepicker>
+                    
+                </mat-form-field>
+                
+
+                <mat-checkbox formControlName="alPresente" class="example-margin">Al presente</mat-checkbox>
+            </div>        
+        </div>
+        <mat-form-field class="example-full-width" appearance="outline" color="accent">
+            <mat-label>Descripción </mat-label>
+            <textarea formControlName="descripcion"  matInput placeholder="Descripción..."></textarea>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['required']">El campo Descripción es requerido</mat-error>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['minlength']">El campo Descripción debe tener  10 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.errors?.['maxlength']">El campo Descripción debe tener  2500 caracteres o menos </mat-error>
+            
+        </mat-form-field>     
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
+        <button [disabled]="form.invalid" type="submit" mat-button  cdkFocusInitial>Aceptar</button>
+    </mat-dialog-actions>
+</form>

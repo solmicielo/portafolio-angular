@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 // Modulos
@@ -14,7 +14,6 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { PortafolioService } from './servicios/portafolio.service';
-import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './componentes/login/login.component';
@@ -26,6 +25,8 @@ import { AddEditPersonaComponent } from './add-edit-componentes/add-edit-persona
 import { AddEditExperienciaComponent } from './add-edit-componentes/add-edit-experiencia/add-edit-experiencia.component';
 import { AddEditSkillsComponent } from './add-edit-componentes/add-edit-skills/add-edit-skills.component';
 import { AddEditProyectosComponent } from './add-edit-componentes/add-edit-proyectos/add-edit-proyectos.component';
+import {  MAT_DATE_LOCALE } from '@angular/material/core';
+import { InterceptorService } from './servicios/interceptor.service';
 
 
 
@@ -45,7 +46,7 @@ import { AddEditProyectosComponent } from './add-edit-componentes/add-edit-proye
     AddEditPersonaComponent,
     AddEditExperienciaComponent,
     AddEditSkillsComponent,
-    AddEditProyectosComponent,
+    AddEditProyectosComponent
     
     
     
@@ -60,7 +61,12 @@ import { AddEditProyectosComponent } from './add-edit-componentes/add-edit-proye
     ReactiveFormsModule
     
   ],
-  providers: [PortafolioService, ],
+  providers: [
+    PortafolioService,
+    { provide:MAT_DATE_LOCALE, useValue:"es-ES"},
+    { provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}
+    
+  ],
   bootstrap: [AppComponent],
   
 })

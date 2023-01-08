@@ -17,7 +17,7 @@
               <div *ngFor="let skill of skillsProfesional" class="candidatos">
                 <div class="parcial">
                   <div class="info">
-                    <div class="nombre">{{skill.nombre}}</div>
+                    <div class="nombre">{{skill.nombreHabilidad}}</div>
                     <div class="porcentaje-num">{{skill.porcentaje}}%</div>
                   </div>
                   <div class="barra-de-progreso">
@@ -38,7 +38,9 @@
       <div class="col-sm-12  col-md-6 justify-content-center  align-items-center ps-md-5">
         <div class="row my-3 my-md-5 align-items-center my-5">
           <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades técnicas</h2>
-          <div class="col-12    text-center text-uppercase my-3 px-md-5 "><button type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-pencil-square fs-5 me-4"></i>editar habilidades técnicas</button></div>              
+          <div class="col-12    text-center text-uppercase my-3 px-md-5 ">
+            <button (click)="addEditSkill()" type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-pencil-square fs-5 me-4"></i>editar habilidades técnicas</button>
+          </div>            
       
         </div>
 
@@ -64,7 +66,7 @@
       
                 ></circle-progress>
 
-              <div class="pr-skill-name">{{skill.nombre}}</div>
+              <div class="pr-skill-name">{{skill.nombreSkill}}</div>
             </div>         
             
           </div>

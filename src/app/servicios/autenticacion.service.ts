@@ -2,15 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Usuario } from '../model/usuario';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="";
+  private myAppUrl:string;
+  private miApiUrl:string;   
+  currentUserSubject: BehaviorSubject<any>;  
+  elUsuarioEstaLogueado:boolean = false;
   
 
   constructor(private http:HttpClient) { 
-    console.log("El servicio de autenticacion esta correindo");
+    console.log("El servicio de autenticación está correindo");
+    this.myAppUrl = environment.endpoint;
+    this.miApiUrl = 'auth/login'    
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
   }
+
+  IniciarSesion(usuario: Usuario):Observable<any>{
+    return this.http.post(`${this.myAppUrl}${this.miApiUrl}`, usuario)
+    this.elUsuarioEstaLogueado = true;
+  }
+
+  
 }

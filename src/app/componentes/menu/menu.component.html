@@ -1,5 +1,5 @@
   <!--inicio del menu --> 
-  <nav class="navbar fixed-top navbar-dark bg-dark  navbar-expand-lg ">
+  <nav class="navbar fixed-top navbar-dark bg-dark  navbar-expand-lg " style="z-index: 1000;">
     <div class="container-fluid">
       
       <!--Logo Argentina Programa --> 
@@ -44,22 +44,22 @@
 
         <ul class="navbar-nav  ms-auto mb-2 mb-lg-0 text-light">
           <li class="nav-item col-md-auto p3 ">
-            <a class="nav-link active" aria-current="page" href="{{menuRedes.linkedin}}" target="_blank">
+              <a class="nav-link active" aria-current="page" href="{{perfil.url_linkedin}}" target="_blank">
               <i class="bi bi-linkedin fs-5"></i>
-              <small class="d-md-none ms-2">Linkedin</small></a>                
+              <small class="d-md-none ms-2">Linkedin</small></a>               
           </li>
           <li class="nav-item col-md-auto p3 ">
-            <a class="nav-link active fs-5" aria-current="page" href="{{menuRedes.github}}" target="_blank">
+            <a class="nav-link active fs-5" aria-current="page" href="{{perfil.url_github}}" target="_blank">
               <i class="bi bi-github"></i>
               <small class="d-md-none ms-2">Github</small></a>                
           </li>
           <li class="nav-item col-md-auto p3 ">
-            <a class="nav-link active" aria-current="page" href="mailto:{{menuRedes.correo}}" target="_blank">
+            <a class="nav-link active" aria-current="page" href="mailto:{{perfil.correo}}" target="_blank">
               <i class="bi bi-envelope fs-5"></i>
               <small class="d-md-none ms-2">Correo</small></a>                
           </li>
           <li class="nav-item col-md-auto p3 ">
-            <a class="nav-link active" aria-current="page" href="https://wa.me/{{menuRedes.whatsapp}}" target="_blank">
+            <a class="nav-link active" aria-current="page" href="https://wa.me/{{perfil.telefono}}" target="_blank">
               <i class="bi bi-whatsapp fs-5"></i>
               <small class="d-md-none ms-2">Whatsapp</small></a>                
           </li>
@@ -67,7 +67,8 @@
           <!-- Boton de iniciar sesion --> 
 
           <form class="d-flex ms-5 ">              
-            <button class="btn btn-sm btn-outline-warning d-none d-md-inline-block " type="submit">Iniciar Sesion</button>
+            <button *ngIf="!estaLogueado" class="btn btn-sm btn-outline-warning d-none d-md-inline-block " (click)="logIn()"  >Iniciar Sesion</button>
+            <button *ngIf="estaLogueado" class="btn btn-sm btn-outline-warning d-none d-md-inline-block " (click)="logOut()"  >Cerrar Sesion</button>
           </form>
 
           

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddEditFormacionComponent } from 'src/app/add-edit-componentes/add-edit-formacion/add-edit-formacion.component';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
@@ -11,22 +12,46 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 export class FormacionComponent implements OnInit {
   formacionList:any;
 
-  constructor(private datosPortafolio:PortafolioService, public dialog: MatDialog) { }
+  constructor(private _portafolioService:PortafolioService, public dialog: MatDialog,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatos().subscribe(data => {
-      this.formacionList= data.formacion;
+    this.getPortafolio();
+    
+  }
+
+  getPortafolio():void{
+    this._portafolioService.obtenerDatos().subscribe(data => {
+      this.formacionList= data.educacion;
+      console.log(data);})
+      ;
+  }
+
+  borrarEstudio(id:number){
+    this._portafolioService.borrarEstudio(id).subscribe(()=>{
+      this.getPortafolio();
+      this.mensajeExito();
+    });
+  }
+  
+  mensajeExito(){
+    this._snackBar.open('Estudio eliminado con Exito!', '',{
+      duration: 2000
     });
   }
 
-  addEditFormacion(){
-    const dialogRef = this.dialog.open(AddEditFormacionComponent, {
-      width:"550px",
+  addEditFormacion(id?:number){
+    console.log(id);
+    const dialogRef = this.dialog.open(AddEditFormacionComponent, {      
+      width:"650px",
       disableClose: true,
+      data:{ id:id}
+      
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');      
+    dialogRef.afterClosed().subscribe(result => {      
+      if(result){
+        this.getPortafolio();
+      }           
     });
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -8,21 +10,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  form: FormGroup;
-  email = new FormControl('', [Validators.required, Validators.email]);  
+  form: FormGroup;   
 
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder, private auth: AutenticacionService, private ruta:Router ) { 
     this.form= this.fb.group(
       {
-        user: ['',[Validators.required,Validators.minLength(6)]],
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(6)]],
-        deviceInfo: this.fb.group({
-          deviceId: [17867868768],
-          deviceType: ["DEVICE_TYPE_ANDROID"],
-          notificationToken: ["67657575eececc34"]
-        })
-
+        nombreUsuario: ['',[Validators.required,Validators.minLength(6)]],        
+        password:['',[Validators.required,Validators.minLength(6)]],        
       }
     );
   }
@@ -32,14 +26,21 @@ export class LoginComponent implements OnInit {
   get Usuario(){
     return this.form.get('user');
   }   
-  get Email(){
-    return this.form.get('email');
-  }
-
+  
   get Password(){
     return this.form.get('password');
   }
 
+  onEnviar(event:Event){
+    event.preventDefault;
+    this.auth.IniciarSesion(this.form.value).subscribe({
+      next:(token) => { 
+        this.ruta.navigate(['/portfolio']);
+        localStorage.setItem('token', token.token);
+        this.auth.elUsuarioEstaLogueado = true;             
+      } })
+      
+  }
   
 
 }
