@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       next:(token) => { 
         this.ruta.navigate(['/portfolio']);
         localStorage.setItem('token', token.token);
-        this.auth.elUsuarioEstaLogueado = true;             
+        
       } })
       
   }

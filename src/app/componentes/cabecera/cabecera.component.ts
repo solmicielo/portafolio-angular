@@ -7,7 +7,7 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
-  perfil:any;
+  perfil:any ={};
 
   constructor(private _portafolioService:PortafolioService) {
     this.getPortafolio();

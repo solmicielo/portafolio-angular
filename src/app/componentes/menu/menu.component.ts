@@ -11,12 +11,12 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class MenuComponent implements OnInit {
   perfil:any= {};
-  estaLogueado = this.auth.elUsuarioEstaLogueado;
+  estaLogueado:boolean = this.auth.usuarioActual();
 
   constructor(private _portafolioService:PortafolioService, private ruta:Router,private auth: AutenticacionService) { }
 
   ngOnInit(): void {
-    
+    this.auth.usuarioActual()
   }
 
   getPortafolio():void{
@@ -32,7 +32,9 @@ export class MenuComponent implements OnInit {
 
   logOut(){
     localStorage.removeItem('token');
-    this.auth.elUsuarioEstaLogueado = false;
+    
   }
+
+  
 
 }

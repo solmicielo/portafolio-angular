@@ -12,8 +12,9 @@ import { Usuario } from '../model/usuario';
 export class AutenticacionService {
   private myAppUrl:string;
   private miApiUrl:string;   
-  currentUserSubject: BehaviorSubject<any>;  
-  elUsuarioEstaLogueado:boolean = false;
+  currentUserSubject: BehaviorSubject<any>;
+  private usuario!: string | null;
+  estaLogueado:boolean = false;
   
 
   constructor(private http:HttpClient) { 
@@ -25,7 +26,18 @@ export class AutenticacionService {
 
   IniciarSesion(usuario: Usuario):Observable<any>{
     return this.http.post(`${this.myAppUrl}${this.miApiUrl}`, usuario)
-    this.elUsuarioEstaLogueado = true;
+    
+  }
+
+  usuarioActual(){
+    this.usuario = localStorage.getItem('token');
+    if (this.usuario == null){
+      this.estaLogueado = false;
+    }else{
+      this.estaLogueado = true;
+    }    
+    return this.estaLogueado;
+    
   }
 
   
