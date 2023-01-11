@@ -11,6 +11,9 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class FormacionComponent implements OnInit {
   formacionList:any;
+  loading:boolean = false;
+  appi:string = this._portafolioService.apiUrlEstudio;
+  
 
   constructor(private _portafolioService:PortafolioService, public dialog: MatDialog,private _snackBar: MatSnackBar) { }
 
@@ -20,14 +23,16 @@ export class FormacionComponent implements OnInit {
   }
 
   getPortafolio():void{
+    this.loading = true;
     this._portafolioService.obtenerDatos().subscribe(data => {
+      this.loading = false;
       this.formacionList= data.educacion;
-      console.log(data);})
-      ;
+      })
+      
   }
 
   borrarEstudio(id:number){
-    this._portafolioService.borrarEstudio(id).subscribe(()=>{
+    this._portafolioService.borrarItem(id, this._portafolioService.apiUrlEstudio).subscribe(()=>{
       this.getPortafolio();
       this.mensajeExito();
     });
@@ -39,8 +44,7 @@ export class FormacionComponent implements OnInit {
     });
   }
 
-  addEditFormacion(id?:number){
-    console.log(id);
+  addEditFormacion(id?:number){        
     const dialogRef = this.dialog.open(AddEditFormacionComponent, {      
       width:"650px",
       disableClose: true,

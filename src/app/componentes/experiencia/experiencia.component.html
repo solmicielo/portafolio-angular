@@ -1,30 +1,42 @@
 <!--Experiencia-->
-<section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5 bg-dark" id="Experiencia">
-    <div class="row my-3 my-md-5 align-items-center">
+<section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5 bg-dark sec-experiencia" id="Experiencia">
+  <div class="row my-3 my-md-5 align-items-center">
       <h2 class="col-12 col-md-6 text-md-start text-center text-white  text-capitalize my-3 px-md-5  ">Experiencia Laboral</h2>
-      <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
-        <button (click)="addEditExperiencia()" type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Experiencia</button>
-      </div>             
-  
-    </div>           
-    <div *ngFor="let experiencia of experienciaList" class="card border-light col-11 col-lg-9  mb-4" >
-      <div class="row ">         
-        <div class="col-md-10">
-            <div class="card-body">
-          <h3 class="card-title">{{experiencia.nombrePuesto}}</h3>
-          <h4 class="text-uppercase fs-6"><strong>{{experiencia.nombreEmpresa}}</strong></h4>
-          <p class="card-text">{{experiencia.descripcion}}</p>
-          <p class="card-text"><small class="text-muted">Desde {{experiencia.fechaInicio}} Hasta {{experiencia.fechaFin}}</small></p>
-            </div>
-        </div>
-        <div class="col-md-2">
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>              
-          <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-        </div>        
-        </div>
-    </div>
-    </div>
 
+      <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
+        <button (click)="addEditExperiencia()" type="button" class="btn btn-outline-warning text-uppercase  ">
+          <i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Experiencia
+        </button>
+      </div>         
+  
+  </div>   
+    
+  <div class="container">
+    <div class="row">
+      
+    </div>
+    <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center">
+      <div *ngFor="let experiencia of experienciaList"  class="col">
+        <div class="tarjeta-expe">
+          <div class="icon-wrapper">
+            <mat-icon>work</mat-icon>
+          </div>
+          <h3>{{experiencia.nombrePuesto}}</h3>
+          <h5>{{experiencia.nombreEmpresa}}</h5>
+          <p>{{experiencia.descripcion}}</p>
+          <h5>Desde {{experiencia.fechaInicio}} Hasta {{experiencia.fechaFin}}</h5>
+          <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
+            <button  mat-mini-fab  color="accent" >
+              <mat-icon>create</mat-icon>
+            </button>
+            <button  mat-mini-fab  color="accent" >
+              <mat-icon>delete_forever</mat-icon>
+            </button>          
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
   
   </section>

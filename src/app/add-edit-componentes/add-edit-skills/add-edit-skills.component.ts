@@ -17,7 +17,7 @@ export class AddEditSkillsComponent implements OnInit {
     private fb : FormBuilder) { 
       this.form= this.fb.group({
         nombre:['',[Validators.required,Validators.minLength(3),Validators.maxLength(75)]],        
-        porcentaje:['',[Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1),Validators.max(100)]],
+        porcentaje:['',[Validators.pattern("^[0-9]*$"),Validators.min(1),Validators.max(100)]],
               
       })
     }

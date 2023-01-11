@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+
+
+.tarjeta {
+  position: relative;
+  min-width: 300px;
+  min-height: 350px;  
+  background: #2e2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.tarjeta::before {
+  content: '';
+  position: absolute;
+  inset: -10px 50px;
+  border-top: 4px solid #ffc107;
+  border-bottom: 4px solid #ffc107;
+  transform: skewY(15deg);
+  transition: 0.5s ease-in-out;
+}
+
+.tarjeta:hover::before {
+  inset: -10px 40px;
+  transform: skewY(0deg);
+}
+
+.tarjeta::after {
+  content: '';
+  position: absolute;
+  inset: 60px -10px;
+  border-left: 4px solid #ffc107;
+  border-right: 4px solid #ffc107;
+  transform: skew(15deg);
+  transition: 0.5s ease-in-out;
+}
+
+.tarjeta:hover::after {
+  inset: 40px -10px;
+  transform: skew(0deg);
+}
+
+.tarjeta .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: #2e2e2e;
+  gap: 30px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.tarjeta .content button {
+  margin: 5px;
+  
+  
+}
+
+.tarjeta:hover .content button {
+  background-color: #2e2e2e;
+  color: #ffc107 ;
+  
+}
+
+.tarjeta .content .icon {
+  color: #ffc107;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  background: #2e2e2e;
+  box-shadow: 0 0 0 4px #2e2e2e,
+    0 0 0 6px #ffc107;
+  transition: 0.5s ease-in-out;
+}
+
+.tarjeta:hover .content .icon {
+  background: #ffc107; 
+  color: #2e2e2e;
+  box-shadow: 0 0 0 4px #2e2e2e,
+    0 0 0 700px #ffc107; 
+} 
+
+.tarjeta .content .text a {
+  color: #fff ;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: 0.5s ease-in-out;
+
+}
+
+
+.tarjeta:hover .content .text a {
+  color: #2e2e2e ;
+}
+
+.tarjeta .content .text p {
+  color: #999;
+  transition: 0.5s ease-in-out;
+}
+
+.tarjeta:hover .content .text p {
+  color: #2e2e2e;
+}
+

@@ -10,7 +10,7 @@
             <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['maxlength']">El campo Habilidad debe tener  75 caracteres o menos </mat-error>
             
         </mat-form-field>
-        <mat-form-field  appearance="outline" color="accent">
+        <!-- <mat-form-field  appearance="outline" color="accent">
             <mat-label>Porcentaje </mat-label>
             <input type="number" min="1" max="100" formControlName="porcentaje" matInput placeholder="Ingrese un Número del 1 al 100">
             <mat-icon matSuffix>star_border</mat-icon>
@@ -18,8 +18,12 @@
             <mat-error *ngIf="form.get('porcentaje')?.touched && form.get('porcentaje')?.errors?.['min']">El campo Porcentaje debe ser de 1 o más </mat-error>
             <mat-error *ngIf="form.get('porcentaje')?.touched && form.get('porcentaje')?.errors?.['max']">El campo Porcentaje debe ser de 100 o menos </mat-error>
             
-        </mat-form-field>       
-            
+        </mat-form-field> -->      
+        
+        <label for="customRange1" class="form-label">Example range</label>
+        <input formControlName="porcentaje" type="range" class="form-range" id="customRange1">  
+        
+        
 
     </mat-dialog-content>
     <mat-dialog-actions align="end">

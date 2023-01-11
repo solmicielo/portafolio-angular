@@ -11,34 +11,36 @@ import { Formacion } from '../model/formacion';
 export class PortafolioService {
   private myAppUrl: string;
   private apiUrlPersona: string;
-  private apiUrlEstudio: string;
+   apiUrlEstudio: string;
+  
 
   constructor(private http:HttpClient) {
     this.myAppUrl = environment.endpoint;
     this.apiUrlPersona = 'persona/buscar/1';
     this.apiUrlEstudio = 'formacion/';
+
   }
   //Obtener datos persona portafolio
   public obtenerDatos(): Observable <any> {
     return this.http.get(this.myAppUrl + this.apiUrlPersona );
   }
   //--------------Endpoints--Formacion---------------------------------
-  //Eliminar Formacion por id
-  public borrarEstudio(id:number):Observable <void>{
-    return this.http.delete<void>(this.myAppUrl + this.apiUrlEstudio + `delete/${id}`);
+  //Eliminar 
+  public borrarItem(id:number, apiUrlItem :string):Observable <void>{
+    return this.http.delete<void>(this.myAppUrl + apiUrlItem + `delete/${id}`);
   }
-  //Crear Formacion 
-  public NuevaFormacion(formacion:Formacion):Observable<any> {
-    return this.http.post<any>(this.myAppUrl + this.apiUrlEstudio +'new',formacion);
+  //Crear 
+  public NuevoItem(objeto:any, apiUrlItem :string):Observable<any> {
+    return this.http.post<any>(this.myAppUrl + apiUrlItem +'new', objeto);
   }
-  //Buscar Formacion
-  public buscarFormacion(id:number):Observable<Formacion> {
-    return this.http.get<Formacion>(this.myAppUrl + this.apiUrlEstudio +`buscar/${id}`);
+  //Buscar 
+  public buscarItem(id:number, apiUrlItem :string):Observable<Formacion> {
+    return this.http.get<Formacion>(this.myAppUrl + apiUrlItem +`buscar/${id}`);
   }
 
-  //Editar Formacion
-  public editarFormacion(formacion:Formacion):Observable<void>{
-    return this.http.put<void>(this.myAppUrl + this.apiUrlEstudio + 'editar',formacion);
+  //Editar 
+  public editarItem(objeto:any, apiUrlItem :string):Observable<void>{
+    return this.http.put<void>(this.myAppUrl + apiUrlItem + 'editar', objeto);
   }
 }
 

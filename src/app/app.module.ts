@@ -27,6 +27,7 @@ import { AddEditSkillsComponent } from './add-edit-componentes/add-edit-skills/a
 import { AddEditProyectosComponent } from './add-edit-componentes/add-edit-proyectos/add-edit-proyectos.component';
 import {  MAT_DATE_LOCALE } from '@angular/material/core';
 import { InterceptorService } from './servicios/interceptor.service';
+import { AddEditHabilidadComponent } from './add-edit-componentes/add-edit-habilidad/add-edit-habilidad.component';
 
 
 
@@ -46,7 +47,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     AddEditPersonaComponent,
     AddEditExperienciaComponent,
     AddEditSkillsComponent,
-    AddEditProyectosComponent
+    AddEditProyectosComponent,
+    AddEditHabilidadComponent
     
     
     

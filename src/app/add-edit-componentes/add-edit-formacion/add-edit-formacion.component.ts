@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Formacion } from 'src/app/model/formacion';
+import { MetodosService } from 'src/app/servicios/metodos.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 
@@ -13,15 +14,22 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class AddEditFormacionComponent implements OnInit {
   form: FormGroup;
-  id:number= 0;
+  identificadorP!: number;  
   maxDate:Date;
   idFormacion:number | undefined;
   loading:boolean = false;
   checkbox:boolean = false;
   operacion:string = 'Agregar ';
+  appi:string = this._portafolioService.apiUrlEstudio;
+  
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,public dialogRef: MatDialogRef<AddEditFormacionComponent>,
-    private dateAdapter: DateAdapter<Date>, private fb : FormBuilder, private _portafolioService:PortafolioService) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<AddEditFormacionComponent>,
+    private dateAdapter: DateAdapter<Date>, 
+    private fb : FormBuilder, 
+    private _portafolioService:PortafolioService,
+    private _metodoService: MetodosService) {
       this.maxDate = new Date();
       this.form= this.fb.group({
         titulo:['',[Validators.required,Validators.minLength(3),Validators.maxLength(75)]],
@@ -30,8 +38,8 @@ export class AddEditFormacionComponent implements OnInit {
         fechaFin:[null,Validators.required],
         alPresente:[null,],
         descripcion:['',[Validators.required,Validators.minLength(10),Validators.maxLength(2500)]]        
-      })
-      this.idFormacion = data.id
+      })      
+      this.idFormacion = data.id;
       
       
     }
@@ -48,7 +56,7 @@ export class AddEditFormacionComponent implements OnInit {
     }
   }
   buscarFormacion(id:number){
-    this._portafolioService.buscarFormacion(id).subscribe(data =>{
+    this._portafolioService.buscarItem(id, this.appi).subscribe(data =>{
       this.form.patchValue({
         id:data.id,
         titulo:data.nombreEstudio,
@@ -62,7 +70,7 @@ export class AddEditFormacionComponent implements OnInit {
   }
   idPersona():void{
     this._portafolioService.obtenerDatos().subscribe(data => {
-      this.id = data.id;
+      this.identificadorP = data.id;
       })
       ;
   }
@@ -90,23 +98,26 @@ export class AddEditFormacionComponent implements OnInit {
       fechaInicio: this.form.get('fechaInicio')?.value.toISOString().slice(0,10),
       fechaFin:this.form.get('fechaFin')?.value.toISOString().slice(0,10),
       estasCursando:this.checkbox,
-      persona:this.id  
-      
+      persona:this.identificadorP
     };
     
     this.loading = true;
 
-    if(this.id !== undefined){      
+    if(this.idFormacion == undefined){      
       //Es agregar
-      this._portafolioService.NuevaFormacion(formacion).subscribe(()=>{         
+      this._portafolioService.NuevoItem(formacion, this.appi).subscribe(()=>{  
+        this._metodoService.mensaje('Nueva Formación agregada con Exito !');       
       })
     }else {
       // es Editar
-      this._portafolioService.editarFormacion(formacion).subscribe(data => {
+      this._portafolioService.editarItem(formacion, this.appi).subscribe(data => {
+        console.log('se deberia ver este msj');
+        this._metodoService.mensaje('Formación editada con Exito !');
       })
     }
     this.loading = false;
-    this.dialogRef.close(true); 
+    this.dialogRef.close(true);
+
     
   }
 
