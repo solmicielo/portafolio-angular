@@ -7,7 +7,9 @@
         <button (click)="addEditExperiencia()" type="button" class="btn btn-outline-warning text-uppercase  ">
           <i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Experiencia
         </button>
-      </div>         
+      </div>
+      
+      <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar> 
   
   </div>   
     
@@ -24,12 +26,12 @@
           <h3>{{experiencia.nombrePuesto}}</h3>
           <h5>{{experiencia.nombreEmpresa}}</h5>
           <p>{{experiencia.descripcion}}</p>
-          <h5>Desde {{experiencia.fechaInicio}} Hasta {{experiencia.fechaFin}}</h5>
+          <p class="text-uppercase">Desde {{experiencia.fechaInicio}} Hasta {{experiencia.fechaFin}}</p>
           <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
-            <button  mat-mini-fab  color="accent" >
+            <button (click)="addEditExperiencia(experiencia.id)"  mat-mini-fab  color="accent" >
               <mat-icon>create</mat-icon>
             </button>
-            <button  mat-mini-fab  color="accent" >
+            <button (click)="borrarExperiencia(experiencia.id)"  mat-mini-fab  color="accent" >
               <mat-icon>delete_forever</mat-icon>
             </button>          
           </div>

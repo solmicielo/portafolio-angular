@@ -1,10 +1,10 @@
 export class Proyecto {
-    id:number;
+    id?:number;
     titulo:String;
     urlImg:String;
     urlLive:String;
     urlRepositorio:String;    
-    persona:number;
+    persona?:number;
 
     constructor(id:number, titulo:String, urlImg:String,urlLive:String, urlRepositorio:String, persona:number ){
         this.id = id;

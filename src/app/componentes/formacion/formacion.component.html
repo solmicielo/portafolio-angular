@@ -1,9 +1,10 @@
 <!--Formacion-->
 <section class="row justify-content-center align-items-center py-5 px-md-5 py-md-5" id="Formacion">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>
   <div class="row my-3 my-md-5 align-items-center">
     <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Formación  </h2>
     <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
-      <button (click)="addEditFormacion()" type="button" routerLink="/add" class="btn btn-outline-dark text-uppercase">
+      <button (click)="addEditFormacion()" type="button"  class="btn btn-outline-dark text-uppercase">
         <i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Estudios
       </button>
     </div>
@@ -22,8 +23,8 @@
         </div>
 
         <div class="text">
-          <a>{{estudio.nombreEstudio}}</a>
-          <a class=" text-uppercase fs-6"><strong>{{estudio.nombreAcademia}}</strong></a>
+          <h3>{{estudio.nombreEstudio}}</h3>
+          <h5>{{estudio.nombreAcademia}}</h5>
           <p>{{estudio.descripcion}}</p>
           <p class="text-uppercase">desde {{estudio.fechaInicio}} hasta {{estudio.fechaFin}}</p>
         </div>

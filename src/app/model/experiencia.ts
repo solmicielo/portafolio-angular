@@ -1,12 +1,12 @@
 export class Experiencia {
-    id:number;
+    id?:number;
     nombrePuesto:String;
     nombreEmpresa:String;
     descripcion:String;
     fechaInicio:Date;
     fechaFin:Date;
     esTrabajoActual:boolean;
-    persona:number;
+    persona?:number;
     
 
     constructor(id:number, nombrePuesto:String, nombreEmpresa:String,descripcion:String, fechaInicio:Date,fechaFin:Date, esTrabajoActual:boolean, persona:number ){

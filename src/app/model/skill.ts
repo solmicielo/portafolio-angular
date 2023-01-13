@@ -2,7 +2,7 @@ export class Skill {
     id?:number;
     nombreSkill:String;
     porcentaje:number;
-    persona:number;
+    persona?:number;
 
     constructor(id:number, nombreSkill:String, porcentaje:number, persona:number) {
         this.id = id;

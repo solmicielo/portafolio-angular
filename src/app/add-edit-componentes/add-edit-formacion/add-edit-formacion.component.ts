@@ -68,6 +68,7 @@ export class AddEditFormacionComponent implements OnInit {
       });
     });
   }
+  
   idPersona():void{
     this._portafolioService.obtenerDatos().subscribe(data => {
       this.identificadorP = data.id;
@@ -110,8 +111,7 @@ export class AddEditFormacionComponent implements OnInit {
       })
     }else {
       // es Editar
-      this._portafolioService.editarItem(formacion, this.appi).subscribe(data => {
-        console.log('se deberia ver este msj');
+      this._portafolioService.editarItem(formacion, this.appi).subscribe(data => {        
         this._metodoService.mensaje('Formación editada con Exito !');
       })
     }

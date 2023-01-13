@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
 
 
 
@@ -93,22 +93,35 @@
     0 0 0 700px #ffc107; 
 } 
 
-.tarjeta .content .text a {
+.tarjeta .content .text h3  { 
   color: #fff ;
+  font-size: 1.4rem;  
   display: inline-block;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: 0.5s ease-in-out;
+  text-decoration: none;   
+  transition: 0.5s ease-in-out; 
 
 }
 
+.tarjeta .content .text h5 {  
+  
+  color: #fff ;
+  display: inline-block;
+  text-decoration: none; 
+  text-transform: uppercase;
+  font-size: 1.1rem; 
+  transition: 0.5s ease-in-out; 
+}
 
-.tarjeta:hover .content .text a {
+.tarjeta:hover .content .text h5 {
+  color: #2e2e2e ;
+}
+
+.tarjeta:hover .content .text h3 {
   color: #2e2e2e ;
 }
 
 .tarjeta .content .text p {
+  font-family: 'Source Code Pro', monospace;
   color: #999;
   transition: 0.5s ease-in-out;
 }

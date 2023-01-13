@@ -1,10 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
 :root {
     --color-blue-medium: #8fe2e4;
     --color-purple: #632ce7;
     --color-gray: #ccc;
     --color-gray-medium: #e86316;
     --color-yellow: #fac32c;
+  }
+
+* {
+    font-family: 'Source Code Pro', monospace;
   }
 
 /* Menu ------------------------------------------- */ 
@@ -116,7 +122,7 @@ nav .fixed-top {
 }
 
 .cada-circulo {
-  display: inline-block;
+  display: inline-block; 
   margin: 0 auto;
   float: none;
   width: 48%;
@@ -124,15 +130,14 @@ nav .fixed-top {
   text-align: center;
 }
 
-.mh-progress{
-  margin-bottom: 10px;
-  font: 900 1.14285/1 Cinzerl, cursive;
+.mh-progress{  
+  margin-bottom: 10px;  
   color: white;
 }
 
 .mh-progress .progressbar-text {
   color: inherit !important;
-  font-family: 'Poppins', sans-serif;
+  
 }
 
 .progress.porgress-line {
@@ -147,7 +152,7 @@ nav .fixed-top {
   width: 60px;
   transform: translateY(-35%);
   text-align: center;
-  font-family:'Poppins', sans-serif ;
+  
 }
 
 .mh-progress.cada-circulo {
@@ -165,8 +170,7 @@ nav .fixed-top {
 }
 
 .candidatos .parcial {
-  display: inline-block;
-  width: 100%;
+  display: inline-block;  
   vertical-align: middle;
 }
 
@@ -182,7 +186,7 @@ nav .fixed-top {
   font-size: 15px;
   font-weight: 600;
   opacity: 0.9;
-  font-family: 'Poppins', sans-serif ;
+  
 }
 
 .candidatos .parcial .info .porcentaje-num{
@@ -225,10 +229,20 @@ nav .fixed-top {
   }
 }
 
+.btn-group-vertical button:hover   {
+  background-color: #101214 ;
+  color: #ffc107;
+}
+
+.btn-group button:hover   {
+  background-color: #101214 ;
+  color: #ffc107;
+  }
+
 /* Skills  -------------------------------------------*/
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;  }
 
 /*  -------------------Formularios------------------------*/
 

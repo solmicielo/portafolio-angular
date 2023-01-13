@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddEditFormacionComponent } from 'src/app/add-edit-componentes/add-edit-formacion/add-edit-formacion.component';
+import { MetodosService } from 'src/app/servicios/metodos.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
@@ -15,7 +16,11 @@ export class FormacionComponent implements OnInit {
   appi:string = this._portafolioService.apiUrlEstudio;
   
 
-  constructor(private _portafolioService:PortafolioService, public dialog: MatDialog,private _snackBar: MatSnackBar) { }
+  constructor(
+    private _portafolioService:PortafolioService, 
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private _metodosservice: MetodosService) { }
 
   ngOnInit(): void {
     this.getPortafolio();
@@ -32,17 +37,11 @@ export class FormacionComponent implements OnInit {
   }
 
   borrarEstudio(id:number){
-    this._portafolioService.borrarItem(id, this._portafolioService.apiUrlEstudio).subscribe(()=>{
+    this._portafolioService.borrarItem(id, this.appi).subscribe(()=> {
       this.getPortafolio();
-      this.mensajeExito();
+      this._metodosservice.mensaje('Estudio eliminado con Exito!');
     });
-  }
-  
-  mensajeExito(){
-    this._snackBar.open('Estudio eliminado con Exito!', '',{
-      duration: 2000
-    });
-  }
+  } 
 
   addEditFormacion(id?:number){        
     const dialogRef = this.dialog.open(AddEditFormacionComponent, {      

@@ -11,20 +11,28 @@ import { Formacion } from '../model/formacion';
 export class PortafolioService {
   private myAppUrl: string;
   private apiUrlPersona: string;
-   apiUrlEstudio: string;
+  apiUrlEstudio: string;
+  apiUrlExperiencia:string;
+  apiUrlSkills:string;
+  apiUrlHabilidades:string;
+  apiUrlProyectos:string;
   
 
   constructor(private http:HttpClient) {
     this.myAppUrl = environment.endpoint;
     this.apiUrlPersona = 'persona/buscar/1';
     this.apiUrlEstudio = 'formacion/';
+    this.apiUrlExperiencia = 'experiencia/';
+    this.apiUrlSkills = 'skill/';
+    this.apiUrlHabilidades = 'habilidad/';
+    this.apiUrlProyectos = 'proyecto/'; 
 
   }
   //Obtener datos persona portafolio
   public obtenerDatos(): Observable <any> {
     return this.http.get(this.myAppUrl + this.apiUrlPersona );
   }
-  //--------------Endpoints--Formacion---------------------------------
+  //--------------Endpoints-----------------------------------
   //Eliminar 
   public borrarItem(id:number, apiUrlItem :string):Observable <void>{
     return this.http.delete<void>(this.myAppUrl + apiUrlItem + `delete/${id}`);
@@ -34,8 +42,8 @@ export class PortafolioService {
     return this.http.post<any>(this.myAppUrl + apiUrlItem +'new', objeto);
   }
   //Buscar 
-  public buscarItem(id:number, apiUrlItem :string):Observable<Formacion> {
-    return this.http.get<Formacion>(this.myAppUrl + apiUrlItem +`buscar/${id}`);
+  public buscarItem(id:number, apiUrlItem :string):Observable<any> {
+    return this.http.get<any>(this.myAppUrl + apiUrlItem +`buscar/${id}`);
   }
 
   //Editar 

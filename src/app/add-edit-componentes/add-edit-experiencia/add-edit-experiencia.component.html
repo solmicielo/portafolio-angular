@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Install Angular</h2>
+<h2 mat-dialog-title>{{operacion}} Experiencia</h2>
 <form [formGroup]="form" (ngSubmit)="addEditExperiencia()">
     <mat-dialog-content >    
         <mat-form-field  appearance="outline" color="accent">
@@ -52,6 +52,6 @@
     </mat-dialog-content>
     <mat-dialog-actions align="end">
         <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
-        <button [disabled]="form.invalid" type="submit" mat-button  cdkFocusInitial>Aceptar</button>
+        <button [disabled]="form.invalid" type="submit" mat-button  >Aceptar</button>
     </mat-dialog-actions>
 </form>
