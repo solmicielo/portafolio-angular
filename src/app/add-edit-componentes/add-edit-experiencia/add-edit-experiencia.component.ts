@@ -107,12 +107,12 @@ export class AddEditExperienciaComponent implements OnInit {
     if(this.idExperiencia == undefined){      
       //Es agregar
       this._portafolioService.NuevoItem(experiencia, this.appi).subscribe(()=>{  
-        this._metodoService.mensaje('Nueva Experiencia agregada con Exito !');       
+        this._metodoService.mensaje('Nueva Experiencia agregada con Exito !', 2);       
       })
     }else {
       // es Editar
       this._portafolioService.editarItem(experiencia, this.appi).subscribe(data => {        
-        this._metodoService.mensaje('Experiencia editada con Exito !');
+        this._metodoService.mensaje('Experiencia editada con Exito !', 2);
       })
     }
     this.loading = false;

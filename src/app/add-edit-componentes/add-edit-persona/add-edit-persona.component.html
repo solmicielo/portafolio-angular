@@ -1,1 +1,102 @@
-<p>add-edit-persona works!</p>
+<h2 mat-dialog-title>Install Angular</h2>
+<form [formGroup]="form" (ngSubmit)="EditPersona()" enctype="multipart/form-data">
+    <mat-dialog-content >  
+        <!-- -------------Nombre-------------------------------- -->  
+
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Nombre Completo</mat-label>
+            <input formControlName="nombre" matInput placeholder="Ingrese Nombre Completo">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">El campo Título del Proyecto es requerido</mat-error>
+            <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['minlength']">El campo Título del Proyecto debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <!-- -------------Profesion-------------------------------- -->
+
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Profesión</mat-label>
+            <input formControlName="profesion" matInput placeholder="Tu Profesion">
+            <mat-icon matSuffix>work_outline</mat-icon>
+            <mat-error *ngIf="form.get('profesion')?.touched && form.get('profesion')?.errors?.['required']">El campo Título del Proyecto es requerido</mat-error>
+            <mat-error *ngIf="form.get('profesion')?.touched && form.get('profesion')?.errors?.['minlength']">El campo Título del Proyecto debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('profesion')?.touched && form.get('profesion')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  75 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <!-- -------------Correo-------------------------------- -->
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Enter your email</mat-label>
+            <input formControlName="correo" matInput placeholder="nombre@example.com">
+            <mat-icon  matSuffix> mail_outline</mat-icon>
+            <mat-error *ngIf="form.get('correo')?.touched && form.get('correo')?.errors?.['required']">El campo Correo es requerido</mat-error>
+            <mat-error *ngIf="form.get('correo')?.touched && form.get('correo')?.errors?.['email']">Correo invalido</mat-error>
+            <mat-error *ngIf="form.get('correo')?.touched && form.get('correo')?.errors?.['minlength']">El campo Nombre de la correo debe tener  3 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('correo')?.touched && form.get('correo')?.errors?.['maxlength']">El campo Nombre de la correo debe tener  75 caracteres o menos </mat-error>
+        </mat-form-field>
+        <!-- -------------Telefono-------------------------------- -->
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Phone number</mat-label>
+            <input formControlName="telefono" matInput placeholder="Tu Profesion">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="form.get('telefono')?.touched && form.get('telefono')?.errors?.['required']">El campo Telefono celular es requerido</mat-error>
+            <mat-error *ngIf="form.get('telefono')?.touched && form.get('telefono')?.errors?.['pattern']">Ingrese solo números, codigo de area sin 0 + numero sin 15 ej: 3511253456 </mat-error>
+            <mat-error *ngIf="form.get('telefono')?.touched && form.get('telefono')?.errors?.['maxlength']">Telefono celular demasiado largo </mat-error>
+            <mat-error *ngIf="form.get('telefono')?.touched && form.get('telefono')?.errors?.['minlength']">Telefono celular demasiado corto </mat-error>
+        </mat-form-field>
+        <!-- -------------Linkedin-------------------------------- -->
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Url del Perfil de Linkedin</mat-label>
+            <input formControlName="linkedin" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <mat-icon matSuffix>launch</mat-icon>
+            <mat-error *ngIf="form.get('linkedin')?.touched && form.get('linkedin')?.errors?.['required']">El campo Título del Proyecto es requerido</mat-error>
+            <mat-error *ngIf="form.get('linkedin')?.touched && form.get('linkedin')?.errors?.['minlength']">El campo Título del Proyecto debe tener  5 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('linkedin')?.touched && form.get('linkedin')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  200 caracteres o menos </mat-error>
+            
+            
+        </mat-form-field>
+        <!-- -------------Github-------------------------------- -->
+
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Url del Perfil de Github</mat-label>
+            <input formControlName="github" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <i matSuffix class="bi bi-github iconos-input"></i>
+            <mat-error *ngIf="form.get('github')?.touched && form.get('github')?.errors?.['required']">El campo Link del githubsitorio es requerido</mat-error>
+            <mat-error *ngIf="form.get('github')?.touched && form.get('github')?.errors?.['minlength']">El campo Link del githubsitorio debe tener  5 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('github')?.touched && form.get('github')?.errors?.['maxlength']">El campo Link del githubsitorio debe tener  200 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        
+        <!-- -------------Sobre Mi-------------------------------- -->
+
+        <mat-form-field class="example-full-width" appearance="outline" color="accent">
+            <mat-label>Descripción sobre mi </mat-label>
+            <textarea formControlName="sobre_mi"  matInput placeholder="Descripción..."></textarea>
+            <mat-error *ngIf="form.get('sobre_mi')?.touched && form.get('sobre_mi')?.errors?.['required']">El campo Descripción es requerido</mat-error>
+            <mat-error *ngIf="form.get('sobre_mi')?.touched && form.get('sobre_mi')?.errors?.['minlength']">El campo Descripción debe tener  10 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('sobre_mi')?.touched && form.get('sobre_mi')?.errors?.['maxlength']">El campo Descripción debe tener  2500 caracteres o menos </mat-error>
+            
+        </mat-form-field>
+        <!-- -------------Curriculum Vitae-------------------------------- -->
+
+        <div class="mb-4 archivo">
+            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
+            <input formControlName="curriculum" class="form-control archivo "  id="formFileLg" type="file">
+            <mat-error class="error" *ngIf="form.get('curriculum')?.touched && form.get('curriculum')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
+        </div>
+        <!-- -------------Foto Perfil-------------------------------- -->
+
+        <div class="mb-4 archivo">
+            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
+            <input formControlName="img" class="form-control archivo "  id="formFileLg" type="file">
+            <mat-error class="error" *ngIf="form.get('img')?.touched && form.get('img')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
+        </div>          
+        
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
+        <button [disabled]="form.invalid" type="submit" mat-button  cdkFocusInitial>Aceptar</button>
+    </mat-dialog-actions>
+</form>

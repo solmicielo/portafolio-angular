@@ -84,12 +84,12 @@ export class AddEditHabilidadComponent implements OnInit {
     if(this.idHabilidad == undefined){      
       //Es agregar
       this._portafolioService.NuevoItem(habilidad, this.appi).subscribe(()=>{  
-        this._metodoService.mensaje('Nueva Habilidad agregada con Exito !');       
+        this._metodoService.mensaje('Nueva Habilidad agregada con Exito !', 2);       
       })
     }else {
       // es Editar
       this._portafolioService.editarItem(habilidad, this.appi).subscribe(data => {        
-        this._metodoService.mensaje('Habilidad editada con Exito !');
+        this._metodoService.mensaje('Habilidad editada con Exito !', 2);
       })
     }
     this.loading = false;

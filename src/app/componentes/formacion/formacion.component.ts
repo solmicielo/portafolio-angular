@@ -39,7 +39,7 @@ export class FormacionComponent implements OnInit {
   borrarEstudio(id:number){
     this._portafolioService.borrarItem(id, this.appi).subscribe(()=> {
       this.getPortafolio();
-      this._metodosservice.mensaje('Estudio eliminado con Exito!');
+      this._metodosservice.mensaje('Estudio eliminado con Exito!', 2);
     });
   } 
 

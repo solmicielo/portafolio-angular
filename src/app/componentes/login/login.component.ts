@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { MetodosService } from 'src/app/servicios/metodos.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,11 @@ export class LoginComponent implements OnInit {
   hide = true;
   form: FormGroup;   
 
-  constructor(private fb : FormBuilder, private auth: AutenticacionService, private ruta:Router ) { 
+  constructor(
+    private fb : FormBuilder, 
+    private auth: AutenticacionService, 
+    private ruta:Router,
+    private _metodoService: MetodosService ) { 
     this.form= this.fb.group(
       {
         nombreUsuario: ['',[Validators.required,Validators.minLength(6)]],        
@@ -36,9 +42,15 @@ export class LoginComponent implements OnInit {
     this.auth.IniciarSesion(this.form.value).subscribe({
       next:(token) => { 
         this.ruta.navigate(['/portfolio']);
-        localStorage.setItem('token', token.token);
+        localStorage.setItem('token', token.token);        
+      },
+      error:(e: HttpErrorResponse) => {        
+        if (e.status == 401){
+          this._metodoService.mensaje("Usuario y/o contraseña incorrectos!! Inténtalo Nuevamente o Regresa haciendo click en Cancelar.", 4)
+        }
         
-      } })
+      }
+    })
       
   }
   

@@ -7,6 +7,12 @@
 
 
 .bg {
-    background-image: url(src\assets\img\june-smith-portafolio.jpg);
+    background-image: url(src\assets\img\login_ilustracion.png);
     background-position: center center;
+    background-size: cover;
+}
+
+.container img {
+    height: 150px;
+    
 }

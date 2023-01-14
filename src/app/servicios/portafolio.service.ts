@@ -19,7 +19,7 @@ export class PortafolioService {
   
 
   constructor(private http:HttpClient) {
-    this.myAppUrl = environment.endpoint;
+    this.myAppUrl = 'https://backendportafoliosol.onrender.com/';
     this.apiUrlPersona = 'persona/buscar/1';
     this.apiUrlEstudio = 'formacion/';
     this.apiUrlExperiencia = 'experiencia/';

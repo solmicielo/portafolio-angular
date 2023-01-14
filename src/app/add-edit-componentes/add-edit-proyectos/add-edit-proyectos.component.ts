@@ -12,7 +12,9 @@ import { Proyecto } from 'src/app/model/proyecto';
 export class AddEditProyectosComponent implements OnInit {
   form: FormGroup;  
 
-  constructor(public dialogRef: MatDialogRef<AddEditProyectosComponent>,private fb : FormBuilder) {
+  constructor(
+    public dialogRef: MatDialogRef<AddEditProyectosComponent>,
+    private fb : FormBuilder) {
       
       this.form= this.fb.group({
         titulo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(75)]],

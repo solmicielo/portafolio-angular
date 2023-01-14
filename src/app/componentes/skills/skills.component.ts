@@ -42,14 +42,14 @@ export class SkillsComponent implements OnInit {
   borrarSkill(id:number){
     this._portafolioService.borrarItem(id, this.appiSkill).subscribe(()=> {
       this.getPortafolio();
-      this._metodosservice.mensaje('Habilidad Técnica eliminada con Exito!');
+      this._metodosservice.mensaje('Habilidad Técnica eliminada con Exito!', 2);
     });
   } 
 
   borrarHabilidad(id:number){
     this._portafolioService.borrarItem(id, this.appiHabillidad).subscribe(()=> {
       this.getPortafolio();
-      this._metodosservice.mensaje('Habilidad Blanda eliminada con Exito!');
+      this._metodosservice.mensaje('Habilidad Blanda eliminada con Exito!', 2);
     });
   } 
 

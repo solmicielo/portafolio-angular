@@ -32,7 +32,7 @@ export class AddEditSkillsComponent implements OnInit {
       this.maxDate = new Date();
       this.form= this.fb.group({
         nombre:['',[Validators.required,Validators.minLength(3),Validators.maxLength(75)]],        
-        porcentaje:['',[Validators.pattern("^[0-9]*$"),Validators.min(1),Validators.max(100)]],              
+        porcentaje:['',[Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1),Validators.max(100)]],              
       })
       this.idSkill = data.id;
     }
@@ -85,12 +85,12 @@ export class AddEditSkillsComponent implements OnInit {
     if(this.idSkill == undefined){      
       //Es agregar
       this._portafolioService.NuevoItem(skill, this.appi).subscribe(()=>{  
-        this._metodoService.mensaje('Nueva Skill agregada con Exito !');       
+        this._metodoService.mensaje('Nueva Skill agregada con Exito !', 2);       
       })
     }else {
       // es Editar
       this._portafolioService.editarItem(skill, this.appi).subscribe(data => {        
-        this._metodoService.mensaje('Skill editada con Exito !');
+        this._metodoService.mensaje('Skill editada con Exito !', 2);
       })
     }
     this.loading = false;

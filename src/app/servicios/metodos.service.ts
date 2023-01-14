@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { PortafolioService } from './portafolio.service';
 
 
@@ -8,7 +8,8 @@ import { PortafolioService } from './portafolio.service';
   providedIn: 'root'
 })
 export class MetodosService {
-  
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   
 
   constructor(    
@@ -17,9 +18,11 @@ export class MetodosService {
     
     ) { }
 
-    mensaje(mensaje: string){
+    mensaje(mensaje: string, segundos: number): void {
       this._snackBar.open(mensaje, '',{
-        duration: 2000
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: segundos * 1000
       });
     }
 

@@ -107,12 +107,12 @@ export class AddEditFormacionComponent implements OnInit {
     if(this.idFormacion == undefined){      
       //Es agregar
       this._portafolioService.NuevoItem(formacion, this.appi).subscribe(()=>{  
-        this._metodoService.mensaje('Nueva Formación agregada con Exito !');       
+        this._metodoService.mensaje('Nueva Formación agregada con Exito !', 2);       
       })
     }else {
       // es Editar
       this._portafolioService.editarItem(formacion, this.appi).subscribe(data => {        
-        this._metodoService.mensaje('Formación editada con Exito !');
+        this._metodoService.mensaje('Formación editada con Exito !', 2);
       })
     }
     this.loading = false;

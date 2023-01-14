@@ -3,10 +3,11 @@
         <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
             
         </div>
-        <div class="col  py-4">            
-            <h2 class="fw-bold text-center py-3">Bienvenido </h2>
+        <div class="col  py-4 text-center">            
+            <h2 class="fw-bold text-center py-1">Bienvenid@! </h2>
+            <img  src=\assets\img\login_user-01.png>
             <form [formGroup]="form" class="col-10 col-sm-8 col-md-8 mx-auto" (ngSubmit)="onEnviar($event)" >
-                <div class="mx-auto">
+                <div class=" mt-1 mx-auto">
                     <mat-form-field  appearance="outline" color="accent">
                         <mat-label>Nombre de Usuario</mat-label>
                         <input formControlName="nombreUsuario" matInput placeholder="Usuario" >                                              
@@ -17,7 +18,7 @@
                 
                 </div>                 
                 
-                <div class="mb-3">
+                <div class="mb-1">
                     <mat-form-field  appearance="outline" color="accent">
                         <mat-label>Ingresa tu Contraseña</mat-label>
                         <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
@@ -29,8 +30,11 @@
                     </mat-form-field>
                 </div>
                 
-                <div class="mb-3 ">
-                    <button type="submit" class=" button casilla" mat-raised-button color="accent" [disabled]="form.invalid">Ingresar</button>
+                <div class="mb-1 ">
+                    <button  type="button" routerLink="/portfolio" class="button casilla  col-6" mat-raised-button  >Cancelar</button>
+                    <button type="submit" class="button casilla  col-6" mat-raised-button color="accent" [disabled]="form.invalid">Ingresar</button>                  
+                
+                      
                 </div>
                 
             </form>
