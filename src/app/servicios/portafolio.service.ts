@@ -10,17 +10,18 @@ import { Formacion } from '../model/formacion';
 })
 export class PortafolioService {
   private myAppUrl: string;
-  private apiUrlPersona: string;
+  private apiUrl: string;
   apiUrlEstudio: string;
   apiUrlExperiencia:string;
   apiUrlSkills:string;
   apiUrlHabilidades:string;
   apiUrlProyectos:string;
-  
+  apiUrlPersona: string;
 
   constructor(private http:HttpClient) {
     this.myAppUrl = 'https://backendportafoliosol.onrender.com/';
-    this.apiUrlPersona = 'persona/buscar/1';
+    this.apiUrl = 'persona/buscar/1';
+    this.apiUrlPersona = 'persona/';
     this.apiUrlEstudio = 'formacion/';
     this.apiUrlExperiencia = 'experiencia/';
     this.apiUrlSkills = 'skill/';
@@ -30,7 +31,7 @@ export class PortafolioService {
   }
   //Obtener datos persona portafolio
   public obtenerDatos(): Observable <any> {
-    return this.http.get(this.myAppUrl + this.apiUrlPersona );
+    return this.http.get(this.myAppUrl + this.apiUrl );
   }
   //--------------Endpoints-----------------------------------
   //Eliminar 

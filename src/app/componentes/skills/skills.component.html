@@ -1,13 +1,13 @@
   <!--Skills-->
     
   
-  <section class="row  justify-content-center align-items-center py-5 px-md-5 py-md-5 bg-dark"  >             
+  <section class="row  justify-content-center align-items-center py-5 px-md-5 py-md-5 "  >             
     <div class="row mh-skills justify-content-center  align-items-center">
-      <div class="col-sm-12  col-md-6  position-relative ps-md-5">
+      <div class=" col-sm-12  col-md-6  position-relative ps-md-5">
         <div class="row my-3 my-md-5 align-items-center my-5">
           <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5 " id="skills">Habilidades Profesionales</h2>
           <div class="col-12    text-center text-uppercase my-3 px-md-5 ">
-            <button (click)="addEditHabilidad()" type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad profesional</button>
+            <button (click)="addEditHabilidad()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad profesional</button>
           </div> 
         </div> 
 
@@ -29,7 +29,7 @@
                       <mat-progress-bar 
                         mode="determinate" 
                         [value]="skill.porcentaje" 
-                        color="accent"
+                        color="accent"                        
                         buffer= "0"
                       ></mat-progress-bar>
                       
@@ -37,10 +37,10 @@
                   </div>
   
                   <div class="btn-group col-2 ms-2" role="group" aria-label="Basic outlined example">
-                    <button (click)="addEditHabilidad(skill.id)" class="m-1"  mat-mini-fab  color="accent" >
+                    <button (click)="addEditHabilidad(skill.id)" class="m-1"  mat-mini-fab   >
                       <mat-icon>create</mat-icon>
                     </button>
-                    <button (click)="borrarHabilidad(skill.id)" class="m-1" mat-mini-fab  color="accent" >
+                    <button (click)="borrarHabilidad(skill.id)" class="m-1" mat-mini-fab  >
                       <mat-icon>delete_forever</mat-icon>
                     </button>          
                   </div>
@@ -58,9 +58,9 @@
 
       <div class="col-sm-12  col-md-6 justify-content-center  align-items-center ps-md-5">
         <div class="row my-3 my-md-5 align-items-center my-5">
-          <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades técnicas</h2>
+          <h2 class="col-12 skill text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades técnicas</h2>
           <div class="col-12    text-center text-uppercase my-3 px-md-5 ">
-            <button (click)="addEditSkill()" type="button" class="btn btn-outline-warning text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad técnica</button>
+            <button (click)="addEditSkill()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad técnica</button>
           </div>            
       
         </div>
@@ -76,8 +76,8 @@
                   [radius]="60"                 
                   [outerStrokeWidth]="7"
                   [innerStrokeWidth]="7"
-                  [outerStrokeColor]="'#ffc107'"
-                  [innerStrokeColor]="'rgb(16, 18, 20)'"
+                  [outerStrokeColor]="'#ff4081'"
+                  [innerStrokeColor]="'#000315'"
                   [title]= "'auto'"
                   [titleColor]="'#ffffff'" 
                   [unitsColor]="'#ffffff'"

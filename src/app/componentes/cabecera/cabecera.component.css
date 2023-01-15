@@ -1,0 +1,49 @@
+.header-main {
+  padding: 12%  0!important;
+      
+} 
+
+
+.parallax{
+  background: url('/assets/img/fondo-hero.jpg') repeat fixed 100%;
+  background-size: cover;
+  color: #fff;
+}
+
+.glass {
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.19);    
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border: 1px solid rgba(255, 255, 255, 1)
+}
+
+.parallax .glass {
+  color:#fff
+}
+
+.parallax .glass h1 {
+  font-size: 2em;
+}
+
+
+.parallax .glass h2 {
+  font-size: 1.5em;
+}
+
+
+
+section button{
+  color:#00073d ;
+  border-color: #00073d;
+}
+
+section button:hover{
+  color:#00073d ;
+  background-color: #fa99cf;
+  border: none;
+  
+}

@@ -1,4 +1,20 @@
 
+section{
+  background-color: #00073d;
+  /* background: rgb(0,6,59);
+  background: linear-gradient(0deg, rgba(0,6,59,1) 31%, rgba(36,18,156,1) 62%)  repeat fixed 100%; 
+  background: linear-gradient(#02103D, #1f067c ) repeat fixed 100%; */
+}
+
+section button{
+  color: #fa5690;
+  border-color:#fa5690;
+}
+
+section button:hover{
+  color: #00073d;  
+  background-color: #fa99cf;
+}
 
 .sec-icon {
   position: relative;
@@ -40,7 +56,7 @@
   height: 100%;
   padding: 2em 1.5em;
   border-radius: 5px;
-  box-shadow: 0 0 35px #212529;
+  box-shadow: 0 0 35px #02103D;
   cursor: pointer;
   transition: 0.5s;
   position: relative;
@@ -53,7 +69,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: linear-gradient(#ff1c30, #ffc720);
+  background: linear-gradient( #0dcaf0, #fa5690);
   position: absolute;
   left: 0%;
   top: -98%;
@@ -91,6 +107,18 @@
 .sec-experiencia .tarjeta-expe button {
   margin: 5px;  
   margin-top: 10px;
+  background-color: #fa99cf;  
+  color:  #00073d;  
+  
+}
+
+.sec-experiencia .tarjeta-expe:hover button {
+  margin: 5px;  
+  margin-top: 10px;
+  background-color: #fff;  
+  
+  ;  
+  
 }
 
 
@@ -115,11 +143,11 @@
 
 .tarjeta-expe .icon-wrapper {
   background-color: #ffffff;
-  color: #ffc720;
+  color: #fa5690;
 }
 
 .sec-experiencia .tarjeta-expe:hover .icon-wrapper {
-  color: #ffc720;
+  color: #0dcaf0;
 }
 
 .sec-experiencia .tarjeta-expe:hover h3 {
@@ -127,7 +155,7 @@
 }
 
 .sec-experiencia .tarjeta-expe:hover p {
-  color: #212529;}
+  color: #fff;}
 
   .sec-experiencia .tarjeta-expe:hover h5 {
-    color: #212529;}
+    color: #fff;}

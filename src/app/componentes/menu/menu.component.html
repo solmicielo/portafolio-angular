@@ -1,5 +1,5 @@
   <!--inicio del menu --> 
-  <nav class="navbar fixed-top navbar-dark bg-dark  navbar-expand-lg " style="z-index: 1000;">
+  <nav class="navbar fixed-top navbar-dark  navbar-expand-lg " style="z-index: 1000;">
     <div class="container-fluid">
       
       <!--Logo Argentina Programa --> 
@@ -15,9 +15,9 @@
       <!-- Elementos del Menu Colapsable -->  
 
       <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/portfolio/">Inicio</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0   ">
+          <li class="nav-item tex center " >
+            <a class="nav-link active " aria-current="page" href="/portfolio/">Inicio</a>
           </li>
 
           <li class="nav-item">
@@ -66,10 +66,10 @@
 
           <!-- Boton de iniciar sesion --> 
 
-          <form class="d-flex ms-5 ">              
-            <button *ngIf="!estaLogueado" class="btn btn-sm btn-outline-warning d-none d-md-inline-block " (click)="logIn()"  >Iniciar Sesion</button>
-            <button *ngIf="estaLogueado" class="btn btn-sm btn-outline-warning d-none d-md-inline-block " (click)="logOut()"  >Cerrar Sesion</button>
-          </form>
+          <div class="sesion d-flex ms-5 me-4 ">              
+            <button *ngIf="!estaLogueado" class="btn btn-sm  d-none d-md-inline-block " (click)="logIn()"  >Iniciar Sesion</button>
+            <button *ngIf="estaLogueado" class="btn btn-sm  d-none d-md-inline-block " (click)="logOut()"  >Cerrar Sesion</button>
+          </div>
 
           
           

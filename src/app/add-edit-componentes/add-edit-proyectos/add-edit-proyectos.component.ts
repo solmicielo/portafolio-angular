@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Proyecto } from 'src/app/model/proyecto';
+import { MetodosService } from 'src/app/servicios/metodos.service';
+import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
   selector: 'app-add-edit-proyectos',
@@ -10,11 +12,19 @@ import { Proyecto } from 'src/app/model/proyecto';
   styleUrls: ['./add-edit-proyectos.component.css']
 })
 export class AddEditProyectosComponent implements OnInit {
-  form: FormGroup;  
+  form: FormGroup;
+  identificadorP!: number;   
+  idProyecto:number | undefined;
+  loading:boolean = false;  
+  operacion:string = 'Agregar ';
+  appi:string = this._portafolioService.apiUrlProyectos;  
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddEditProyectosComponent>,
-    private fb : FormBuilder) {
+    private fb : FormBuilder,
+    private _portafolioService:PortafolioService,
+    private _metodoService: MetodosService) {
       
       this.form= this.fb.group({
         titulo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(75)]],
@@ -22,9 +32,40 @@ export class AddEditProyectosComponent implements OnInit {
         img:[null,Validators.required,],        
         demo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]]        
       })
+      this.idProyecto = data.id;
     }
 
   ngOnInit(): void {
+    this.idPersona();
+    this.esEditar(this.idProyecto);
+  }
+
+  esEditar(id:number| undefined){
+    if(id !== undefined){
+      this.operacion = 'Editar ';
+      this.buscarProyecto(id);
+    }
+  }
+
+  buscarProyecto(id:number){
+    this._portafolioService.buscarItem(id, this.appi).subscribe(data =>{
+      this.form.patchValue({
+        id:data.id,
+        titulo:data.titulo,
+        repo: data.urlRepositorio,
+        demo:data.urlLive,
+        img:data.urlImg,
+        
+        
+      });
+    });
+  }
+
+  idPersona():void{
+    this._portafolioService.obtenerDatos().subscribe(data => {
+      this.identificadorP = data.id;
+      })
+      ;
   }
 
   cancelar() {
@@ -32,16 +73,31 @@ export class AddEditProyectosComponent implements OnInit {
   }
 
   addEditProyecto() {
+    this.idPersona();
     const proyecto: Proyecto = {
-      id:1,
+      id:this.idProyecto,
       titulo: this.form.get('titulo')?.value,
-      urlImg: this.form.get('institucion')?.value,
-      urlLive:this.form.get('descripcion')?.value,
-      urlRepositorio: this.form.get('fechaInicio')?.value,           
-      persona:1
+      urlImg: this.form.get('img')?.value,
+      urlLive:this.form.get('demo')?.value,
+      urlRepositorio: this.form.get('repo')?.value,           
+      persona:this.identificadorP
       
     };
-    console.log(proyecto);
+    this.loading = true;
+    
+    if(this.idProyecto == undefined){      
+      //Es agregar
+      this._portafolioService.NuevoItem(proyecto, this.appi).subscribe(()=>{  
+        this._metodoService.mensaje('Nueva Proyecto agregado con Exito !', 2);       
+      })
+    }else {
+      // es Editar
+      this._portafolioService.editarItem(proyecto, this.appi).subscribe(data => {        
+        this._metodoService.mensaje('Proyecto editado con Exito !', 2);
+      })
+    }
+    this.loading = false;
+    this.dialogRef.close(true);
   }
 
 }
