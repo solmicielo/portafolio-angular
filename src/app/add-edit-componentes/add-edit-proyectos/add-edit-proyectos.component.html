@@ -10,11 +10,16 @@
             <mat-error *ngIf="form.get('titulo')?.touched && form.get('titulo')?.errors?.['maxlength']">El campo Título del Proyecto debe tener  75 caracteres o menos </mat-error>
             
         </mat-form-field>
-        <div class="mb-4 archivo">
-            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
-            <input formControlName="img" class="form-control archivo "  id="formFileLg" type="file">
-            <mat-error class="error" *ngIf="form.get('img')?.touched && form.get('img')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
-        </div>          
+        
+        <mat-form-field  appearance="outline" color="accent">
+            <mat-label>Link de la imagen del Proyecto</mat-label>
+            <input formControlName="img" matInput placeholder="Ingrese Título, Carrera o Curso">
+            <i matSuffix class="bi bi-github iconos-input"></i>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['required']">El campo Link del imagen es requerido</mat-error>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['minlength']">El campo Link del imagen debe tener  5 caracteres o mas </mat-error>
+            <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['maxlength']">El campo Link del imagen debe tener  200 caracteres o menos </mat-error>
+            
+        </mat-form-field>          
         <mat-form-field  appearance="outline" color="accent">
             <mat-label>Link del demo del Proyecto</mat-label>
             <input formControlName="demo" matInput placeholder="Ingrese Título, Carrera o Curso">

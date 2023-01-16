@@ -3,7 +3,7 @@
     <div class="row my-3 my-md-5 align-items-center">
       <h2 class="col-12 col-md-6 text-md-start text-center  text-capitalize my-3 px-md-5  ">Proyectos </h2>
       <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
-        <button (click)="addEditProyecto()" type="button" class="btn btn-outline-dark text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Proyecto</button>
+        <button (click)="addEditProyecto()" type="button" class="btn agragar-proyecto text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Proyecto</button>
       </div>         
     </div> 
     
@@ -21,11 +21,11 @@
             <button type="button" class="boton"> Live Demo<i class="bi bi-arrow-up-right-circle  ms-2"></i><a href="{{proyecto.urlLive}}" target="_blank"></a></button>
           </div>                          -->
         </div>
-        <div class="btn-group position-absolute top-0 end-0 m-1" role="group" aria-label="Basic outlined example">
-          <button (click)="addEditProyecto(proyecto.id)" class="me-1"   mat-mini-fab  color="accent" >
+        <div *ngIf="estaLogueado" class="btn-group position-absolute top-0 end-0 m-1" role="group" aria-label="Basic outlined example">
+          <button (click)="addEditProyecto(proyecto.id)" class="me-1 botone-editar-proyecto"   mat-mini-fab  color="accent" >
             <mat-icon>create</mat-icon>
           </button>
-          <button (click)="borrarProyecto(proyecto.id)"   mat-mini-fab  color="accent" >
+          <button (click)="borrarProyecto(proyecto.id)" class="botone-editar-proyecto"  mat-mini-fab  color="accent" >
             <mat-icon>delete_forever</mat-icon>
           </button>               
         </div>       

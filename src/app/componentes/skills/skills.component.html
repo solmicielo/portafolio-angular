@@ -36,7 +36,7 @@
                     </div>
                   </div>
   
-                  <div class="btn-group col-2 ms-2" role="group" aria-label="Basic outlined example">
+                  <div *ngIf="estaLogueado" class="btn-group col-2 ms-2" role="group" aria-label="Basic outlined example">
                     <button (click)="addEditHabilidad(skill.id)" class="m-1"  mat-mini-fab   >
                       <mat-icon>create</mat-icon>
                     </button>
@@ -91,7 +91,7 @@
               
             </div>
             <div class="pr-skill-name">{{skill.nombreSkill}}</div>
-            <div class="btn-group-vertical ms-4 position-absolute top-0 end-0" role="group" aria-label="Vertical button group">
+            <div *ngIf="estaLogueado" class="btn-group-vertical ms-4 position-absolute top-0 end-0" role="group" aria-label="Vertical button group">
               <button (click)="addEditSkill(skill.id)" class="m-1"  mat-mini-fab  color="accent" >
                 <mat-icon>create</mat-icon>
               </button>

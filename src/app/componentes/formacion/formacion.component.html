@@ -26,10 +26,10 @@
           <h3>{{estudio.nombreEstudio}}</h3>
           <h5>{{estudio.nombreAcademia}}</h5>
           <p>{{estudio.descripcion}}</p>
-          <p class="text-uppercase">desde {{estudio.fechaInicio}} hasta {{estudio.fechaFin}}</p>
+          <p class="text-uppercase">desde {{estudio.fechaInicio |date : "dd/MM/y" }}  hasta {{estudio.fechaFin|date : "dd/MM/y" }} </p>
         </div>
 
-        <div class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
+        <div *ngIf="estaLogueado" class="btn-group position-absolute top-0 end-0" role="group" aria-label="Basic outlined example">
           <button (click)="addEditFormacion(estudio.id)" mat-mini-fab  color="accent" >
             <mat-icon>create</mat-icon>
           </button>

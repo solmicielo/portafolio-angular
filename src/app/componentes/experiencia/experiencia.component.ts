@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddEditExperienciaComponent } from 'src/app/add-edit-componentes/add-edit-experiencia/add-edit-experiencia.component';
 import { Persona } from 'src/app/model/persona';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { MetodosService } from 'src/app/servicios/metodos.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
@@ -15,15 +16,18 @@ export class ExperienciaComponent implements OnInit {
   experienciaList:any;
   loading:boolean = false;
   appi:string = this._portafolioService.apiUrlExperiencia;
+  estaLogueado:boolean = this.auth.usuarioActual();
 
   constructor(
     private _portafolioService:PortafolioService,
     public dialog: MatDialog,
     private _snackBar: MatSnackBar,
-    private _metodosservice: MetodosService) { }
+    private _metodosservice: MetodosService,
+    private auth: AutenticacionService) { }
 
   ngOnInit(): void {
     this.getPortafolio();
+    this.auth.usuarioActual();
   }
   getPortafolio():void{
     this.loading = true;

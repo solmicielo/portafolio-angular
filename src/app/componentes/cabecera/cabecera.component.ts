@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddEditPersonaComponent } from 'src/app/add-edit-componentes/add-edit-persona/add-edit-persona.component';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
 @Component({
@@ -12,16 +13,19 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 export class CabeceraComponent implements OnInit {
   perfil:any ={};
   loading:boolean = false;
+  estaLogueado:boolean = this.auth.usuarioActual();
 
   constructor(
     private _portafolioService:PortafolioService,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar ) {
+    private _snackBar: MatSnackBar,
+    private auth: AutenticacionService ) {
     this.getPortafolio();
   }
 
   ngOnInit(): void {
     this.getPortafolio();
+    this.auth.usuarioActual()
     
   }
 

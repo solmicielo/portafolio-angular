@@ -11,17 +11,19 @@
     <div class="col-9 col-md-5 p-0 ">          
       <div class="photo-frame position-relative shadow espacio">
         <img [src]="perfil.url_foto" alt="June Smith" class="img-fluid float-end" />            
-      </div>      
+      </div>
+            
     </div>
   </div>     
     
   </header>
   <section class="d-flex my-3 gap-2 my-md-5 justify-content-evenly">  
-    <button  type="button" class="d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">
-      <mat-icon>archive</mat-icon>Descargar Curriculum
+    <button   type="button" class="d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">
+      <mat-icon>archive</mat-icon>
+      <a class="nav-link active fs-5" aria-current="page" href="{{perfil.url_curriculum}}" target="_blank">Descargar Curriculum</a>
     </button>
   
-    <button (click)="EditPersona(perfil.id)"  type="button" class=" d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">
+    <button *ngIf="estaLogueado" (click)="EditPersona(perfil.id)"  type="button" class=" d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">
       <mat-icon>create</mat-icon>Editar Información Perfil
     </button>
       

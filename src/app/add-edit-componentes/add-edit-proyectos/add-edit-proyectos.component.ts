@@ -18,6 +18,7 @@ export class AddEditProyectosComponent implements OnInit {
   loading:boolean = false;  
   operacion:string = 'Agregar ';
   appi:string = this._portafolioService.apiUrlProyectos;  
+  img!:any;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -29,7 +30,7 @@ export class AddEditProyectosComponent implements OnInit {
       this.form= this.fb.group({
         titulo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(75)]],
         repo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]],
-        img:[null,Validators.required,],        
+        img:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]],        
         demo:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]]        
       })
       this.idProyecto = data.id;
@@ -58,7 +59,19 @@ export class AddEditProyectosComponent implements OnInit {
         
         
       });
+      if(this._metodoService.urlImg == undefined){
+        this.img =data.urlImg;
+      }else {
+        this.img =this._metodoService.urlImg;
+      };
     });
+    
+  }
+
+  subirImagen($event: any){
+    const idImg = this.idProyecto;
+    const name = "proyecto_" + idImg;
+    this._metodoService.subirImg($event, name);
   }
 
   idPersona():void{

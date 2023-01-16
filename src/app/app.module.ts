@@ -28,6 +28,9 @@ import { AddEditProyectosComponent } from './add-edit-componentes/add-edit-proye
 import {  MAT_DATE_LOCALE } from '@angular/material/core';
 import { InterceptorService } from './servicios/interceptor.service';
 import { AddEditHabilidadComponent } from './add-edit-componentes/add-edit-habilidad/add-edit-habilidad.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -60,7 +63,9 @@ import { AddEditHabilidadComponent } from './add-edit-componentes/add-edit-habil
     NgCircleProgressModule.forRoot({}),
     BrowserAnimationsModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
     
   ],
   providers: [

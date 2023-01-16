@@ -78,25 +78,27 @@
             <mat-error *ngIf="form.get('sobre_mi')?.touched && form.get('sobre_mi')?.errors?.['maxlength']">El campo Descripción debe tener  2500 caracteres o menos </mat-error>
             
         </mat-form-field>
+
+         <!-- -------------Foto Perfil-------------------------------- -->
+
+         <div class="mb-4 archivo">
+            <label for="formFileLg" class="form-label">Selecciona la imagen de Perfil</label>
+            <input (change)="subirImagen($event)"  class="form-control archivo "  id="formFileLg" type="file">
+           
+        </div>
+
         <!-- -------------Curriculum Vitae-------------------------------- -->
 
         <div class="mb-4 archivo">
-            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
-            <input formControlName="curriculum" class="form-control archivo "  id="formFileLg" type="file">
-            <mat-error class="error" *ngIf="form.get('curriculum')?.touched && form.get('curriculum')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
+            <label for="formFileLg" class="form-label">Selecciona tu  Curriculum</label>
+            <input (change)="subirCv($event)"  class="form-control archivo "  id="formFileLg" type="file">
+            
         </div>
-        <!-- -------------Foto Perfil-------------------------------- -->
-
-        <div class="mb-4 archivo">
-            <label for="formFileLg" class="form-label">Selecciona la imagen del Proyecto</label>
-            <input formControlName="img" class="form-control archivo "  id="formFileLg" type="file">
-            <mat-error class="error" *ngIf="form.get('img')?.touched && form.get('img')?.errors?.['required']">El campo Selecciona la imagen es requerido</mat-error>
-        </div>          
-        
-        
+             
+       
     </mat-dialog-content>
     <mat-dialog-actions align="end">
         <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
-        <button [disabled]="form.invalid" type="submit" mat-button  cdkFocusInitial>Aceptar</button>
+        <button  [disabled]="form.invalid" type="submit" mat-button  >Aceptar</button>
     </mat-dialog-actions>
 </form>

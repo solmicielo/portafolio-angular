@@ -2,6 +2,20 @@
     --gradient: linear-gradient(to left top, #40A2E7 10%, #F75990 90%) !important;
   } 
   
+  .agragar-proyecto {
+    color: #00073d;
+    border-color: #00073d;
+  }
+
+  .agragar-proyecto:hover {
+    background-color: #fa99cf;
+    color: #00073d;
+    border-color: #00073d;
+  }
+
+  .botone-editar-proyecto:hover{
+    color:#fa99cf ;
+  }
   
   .card {
     background:   #00073d;
@@ -9,6 +23,15 @@
     border: 2px solid #F75990;
     color: rgba(250, 250, 250, 0.8);
     margin-bottom: 2rem;
+  }
+
+  menu .card .btn-group button {
+    color: #F75990 ;
+    background-color: #fff;
+  }
+
+  menu .card .btn-group button:hover {
+    color: #F75990 ;
   }
   
   .botones .btn {

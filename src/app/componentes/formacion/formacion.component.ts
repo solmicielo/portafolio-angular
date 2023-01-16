@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddEditFormacionComponent } from 'src/app/add-edit-componentes/add-edit-formacion/add-edit-formacion.component';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { MetodosService } from 'src/app/servicios/metodos.service';
 import { PortafolioService } from 'src/app/servicios/portafolio.service';
 
@@ -14,16 +15,19 @@ export class FormacionComponent implements OnInit {
   formacionList:any;
   loading:boolean = false;
   appi:string = this._portafolioService.apiUrlEstudio;
+  estaLogueado:boolean = this.auth.usuarioActual();
   
 
   constructor(
     private _portafolioService:PortafolioService, 
     public dialog: MatDialog,
     private _snackBar: MatSnackBar,
-    private _metodosservice: MetodosService) { }
+    private _metodosservice: MetodosService,
+    private auth: AutenticacionService) { }
 
   ngOnInit(): void {
     this.getPortafolio();
+    this.auth.usuarioActual();
     
   }
 
