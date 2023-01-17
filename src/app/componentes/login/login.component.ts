@@ -12,7 +12,8 @@ import { MetodosService } from 'src/app/servicios/metodos.service';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  form: FormGroup;   
+  form: FormGroup;  
+  loading:boolean = false; 
 
   constructor(
     private fb : FormBuilder, 
@@ -38,9 +39,11 @@ export class LoginComponent implements OnInit {
   }
 
   onEnviar(event:Event){
+    this.loading = true;
     event.preventDefault;
     this.auth.IniciarSesion(this.form.value).subscribe({
       next:(token) => { 
+        this.loading = false;
         this.ruta.navigate(['/portfolio']);
         localStorage.setItem('token', token.token);        
       },

@@ -57,7 +57,7 @@ export class FormacionComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {      
       if(result){
-        this.getPortafolio();
+        setTimeout(() => {this.getPortafolio();}, 4000)
       }           
     });
   }

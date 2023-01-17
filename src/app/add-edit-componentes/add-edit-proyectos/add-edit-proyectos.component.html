@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Install Angular</h2>
+<h2 mat-dialog-title>{{operacion}} Proyecto</h2>
 <form [formGroup]="form" (ngSubmit)="addEditProyecto()" enctype="multipart/form-data">
     <mat-dialog-content >    
         <mat-form-field  appearance="outline" color="accent">
@@ -14,7 +14,7 @@
         <mat-form-field  appearance="outline" color="accent">
             <mat-label>Link de la imagen del Proyecto</mat-label>
             <input formControlName="img" matInput placeholder="Ingrese Título, Carrera o Curso">
-            <i matSuffix class="bi bi-github iconos-input"></i>
+            <mat-icon matSuffix> insert_photo</mat-icon>
             <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['required']">El campo Link del imagen es requerido</mat-error>
             <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['minlength']">El campo Link del imagen debe tener  5 caracteres o mas </mat-error>
             <mat-error *ngIf="form.get('repo')?.touched && form.get('repo')?.errors?.['maxlength']">El campo Link del imagen debe tener  200 caracteres o menos </mat-error>

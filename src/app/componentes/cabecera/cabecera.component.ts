@@ -34,6 +34,9 @@ export class CabeceraComponent implements OnInit {
     this._portafolioService.obtenerDatos().subscribe(data => {
       this.loading = false;
       this.perfil= data;
+      console.log(data.url_curriculum);
+      
+      
       //return this.perfil;
       })
       ;
@@ -49,7 +52,7 @@ export class CabeceraComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {      
       if(result){
-        this.getPortafolio();
+        setTimeout(() => {this.getPortafolio();}, 4000)
       }           
     });
   }

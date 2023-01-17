@@ -1,6 +1,6 @@
 <!--Cabecera-->
 <header class=" parallax row  header-main justify-content-center  pb-5" >
-  <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar> 
+  <mat-progress-bar class="mb-5" *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar> 
   <div class="glass align-items-center row p-0">
     <div class="   col-md-7  text-center text-md-start p-5  ">                   
       <h1 >Hola, Soy {{perfil.nombre_completo}}  </h1>
@@ -20,7 +20,7 @@
   <section class="d-flex my-3 gap-2 my-md-5 justify-content-evenly">  
     <button   type="button" class="d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">
       <mat-icon>archive</mat-icon>
-      <a class="nav-link active fs-5" aria-current="page" href="{{perfil.url_curriculum}}" target="_blank">Descargar Curriculum</a>
+      <a class="nav-link active fs-5"  href="{{perfil.url_curriculum}}" target="_blank" title="Descargar Curriculum">Descargar Curriculum</a>
     </button>
   
     <button *ngIf="estaLogueado" (click)="EditPersona(perfil.id)"  type="button" class=" d-flex btn btn-outline-dark text-uppercase align-items-center gap-2  ">

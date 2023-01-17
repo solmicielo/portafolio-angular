@@ -46,7 +46,7 @@ export class MetodosService {
       list(imagesRef).then(async response =>{
         for(let item of response.items){
           this.urlImg = await getDownloadURL(item);
-          console.log('La url es:  '+ this.urlImg);
+          console.log('La url de imagen es:  '+ this.urlImg);
           
         }
       })
@@ -56,9 +56,10 @@ export class MetodosService {
 
     subirPdf($event: any, name: string) {      
       const file = $event.target.files[0];
-      const imgRef = ref(this.storage, `archivos/`+ name);
-      uploadBytes(imgRef, file).then (response => {
-        this.getImg();
+      const cvRef = ref(this.storage, `archivos/`+ name);
+      uploadBytes(cvRef, file).then (response => {
+        this.getCv();
+        console.log('esto es en subir Pdf', this.urlCv);
         
       }).catch(e => console.log(e))
       
@@ -66,11 +67,11 @@ export class MetodosService {
     }
 
     getCv(){
-      const imagesRef = ref(this.storage, 'archivos');
-      list(imagesRef).then(async response =>{
+      const curriculumRef = ref(this.storage, 'archivos');
+      list(curriculumRef).then(async response =>{
         for(let item of response.items){
           this.urlCv = await getDownloadURL(item);
-          console.log('La url es:  '+ this.urlCv);
+          console.log('La url de cv es es:  '+ this.urlCv);
           
         }
       })

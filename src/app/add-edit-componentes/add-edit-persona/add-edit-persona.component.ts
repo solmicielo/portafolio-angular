@@ -57,22 +57,30 @@ export class AddEditPersonaComponent implements OnInit {
         img: data.url_foto,
         curriculum:data.url_curriculum
       });
-      if(this._metodoService.urlImg == undefined){
-        this.img =data.url_foto;
-      }else {
-        this.img =this._metodoService.urlImg;
-      };
+      this.editarImg(data.url_foto, this._metodoService.urlImg);
+      this.editarCv(data.url_curriculum, this._metodoService.urlCv);
 
-      if(this._metodoService.urlCv == undefined){
-        this.cv =data.url_curriculum;
-      }else {
-        this.img =this._metodoService.urlCv;
-      }
-      
-      console.log( data.url_foto);
-      console.log('Esto es la url',   this._metodoService.urlImg);
-      
     });
+  }
+
+  editarImg(anterior:string, nueva:string | undefined){
+    if(this._metodoService.urlImg == undefined){
+      this.img = anterior;
+    }else {
+      this.img = nueva;
+    };
+    ;
+  }
+
+  editarCv(anterior:string, nueva:string | undefined){
+    if(this._metodoService.urlCv == undefined){
+      this.cv = anterior;
+      }else {
+        this.cv = nueva;
+      };
+      ;
+      
+
   }
   
 
@@ -80,12 +88,15 @@ export class AddEditPersonaComponent implements OnInit {
     const idImg = this.idPersona;
     const name = "perfil_" + idImg;
     this._metodoService.subirImg($event, name);
+    
   }
 
   subirCv($event: any){
-    const idImg = this.idPersona;
-    const name = "curriculum_" + idImg;
+    const idCv = this.idPersona;
+    const name = "curriculum_" + idCv;
     this._metodoService.subirPdf($event, name);
+    
+    
   }
 
   cancelar() {
@@ -106,7 +117,7 @@ export class AddEditPersonaComponent implements OnInit {
       telefono:this.form.get('telefono')?.value
       
     };
-    console.log(persona);    
+    
     
     this.loading = true;
 

@@ -1,3 +1,7 @@
+section {
+    margin-top: 0px
+}
+
 
 
 .iconoOjo {
@@ -5,11 +9,14 @@
     border: 0px;   
 }
 
+.login {
+    background-color: #fff;
+}
 
 .bg {
-    background-image: url(src\assets\img\login_ilustracion.jpg);
-    background-position: center center;
-    background-size: cover;
+    background-image: url('src\assets\img\fondo-hero.jpg') ;
+    background-position: bottom center;
+    background-size: cover; 
 }
 
 .container img {

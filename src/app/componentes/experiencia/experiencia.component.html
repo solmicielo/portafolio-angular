@@ -4,7 +4,7 @@
       <h2 class="col-12 col-md-6 text-md-start text-center text-white  text-capitalize my-3 px-md-5  ">Experiencia Laboral</h2>
 
       <div class="col-12 col-md-6  text-md-end text-center text-uppercase my-3 px-md-5 ">
-        <button (click)="addEditExperiencia()" type="button" class="btn  text-uppercase  ">
+        <button *ngIf="estaLogueado" (click)="addEditExperiencia()" type="button" class="btn  text-uppercase  ">
           <i class="bi bi-plus-circle fs-5 me-4"></i>Agregar Experiencia
         </button>
       </div>

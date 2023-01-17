@@ -7,8 +7,9 @@
         <div class="row my-3 my-md-5 align-items-center my-5">
           <h2 class="col-12   text-center text-white  text-capitalize my-3 px-md-5 " id="skills">Habilidades Profesionales</h2>
           <div class="col-12    text-center text-uppercase my-3 px-md-5 ">
-            <button (click)="addEditHabilidad()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad profesional</button>
-          </div> 
+            <button *ngIf="estaLogueado" (click)="addEditHabilidad()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad profesional</button>
+          </div>
+          <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar> 
         </div> 
 
         <div class="mh-skills-inner pt-md-3">
@@ -37,7 +38,7 @@
                   </div>
   
                   <div *ngIf="estaLogueado" class="btn-group col-2 ms-2" role="group" aria-label="Basic outlined example">
-                    <button (click)="addEditHabilidad(skill.id)" class="m-1"  mat-mini-fab   >
+                    <button  (click)="addEditHabilidad(skill.id)" class="m-1"  mat-mini-fab   >
                       <mat-icon>create</mat-icon>
                     </button>
                     <button (click)="borrarHabilidad(skill.id)" class="m-1" mat-mini-fab  >
@@ -60,8 +61,9 @@
         <div class="row my-3 my-md-5 align-items-center my-5">
           <h2 class="col-12 skill text-center text-white  text-capitalize my-3 px-md-5  ">Habilidades técnicas</h2>
           <div class="col-12    text-center text-uppercase my-3 px-md-5 ">
-            <button (click)="addEditSkill()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad técnica</button>
-          </div>            
+            <button *ngIf="estaLogueado" (click)="addEditSkill()" type="button" class="boton-skill btn  text-uppercase  "><i class="bi bi-plus-circle fs-5 me-4"></i>Agregar habilidad técnica</button>
+          </div>
+          <mat-progress-bar *ngIf="loading" mode="indeterminate" color="accent"></mat-progress-bar>            
       
         </div>
 

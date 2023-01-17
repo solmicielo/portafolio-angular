@@ -17,11 +17,13 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.usuarioActual()
+    this.getPortafolio()
   }
 
   getPortafolio():void{
     this._portafolioService.obtenerDatos().subscribe(data => {
-      this.perfil= data;
+      this.perfil= data;     
+      
       })
       ;
   }
@@ -32,6 +34,7 @@ export class MenuComponent implements OnInit {
 
   logOut(){
     localStorage.removeItem('token');
+     window.location.reload()
     
   }
 

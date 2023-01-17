@@ -36,6 +36,7 @@ export class SkillsComponent implements OnInit {
   }
 
   getPortafolio():void{
+    this.loading = true;
     this._portafolioService.obtenerDatos().subscribe(data => {
       this.loading = false;
       this.skillsProfesional= data.habilidades;
@@ -80,7 +81,7 @@ export class SkillsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.getPortafolio();
+        setTimeout(() => {this.getPortafolio();}, 4000)
       }               
     });
   }
