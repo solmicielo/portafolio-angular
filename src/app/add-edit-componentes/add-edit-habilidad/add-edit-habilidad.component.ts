@@ -20,6 +20,8 @@ export class AddEditHabilidadComponent implements OnInit {
   checkbox:boolean = false;
   operacion:string = 'Agregar ';
   appi:string = this._portafolioService.apiUrlHabilidades;
+  
+  
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,11 +36,16 @@ export class AddEditHabilidadComponent implements OnInit {
         porcentaje:['',[Validators.pattern("^[0-9]*$"),Validators.min(1),Validators.max(100)]],              
       })
       this.idHabilidad= data.id;
+      
+      
+      
+      
     }
 
   ngOnInit(): void {
     this.idPersona();
     this.esEditar(this.idHabilidad);
+    
   }
 
   esEditar(id:number| undefined){
@@ -78,6 +85,8 @@ export class AddEditHabilidadComponent implements OnInit {
       persona:this.identificadorP
       
     };
+    
+  
     console.log(habilidad);
     this.loading = true;
 

@@ -2,7 +2,7 @@
 <form [formGroup]="form" (ngSubmit)="addEditHabilidad()">
     <mat-dialog-content >    
         <mat-form-field  appearance="outline" color="accent">
-            <mat-label> Habilidad Dura</mat-label>
+            <mat-label> Habilidad Blanda</mat-label>
             <input formControlName="nombre" matInput placeholder="Ingrese nombre">
             <mat-icon matSuffix>code</mat-icon>
             <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required']">El campo Habilidad es requerido</mat-error>
@@ -10,13 +10,16 @@
             <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['maxlength']">El campo Habilidad debe tener  75 caracteres o menos </mat-error>
             
         </mat-form-field>
-            
-        
-        <label for="customRange1" class="form-label">Porcentaje</label>
-        <input formControlName="porcentaje" type="range" class="form-range" id="customRange1">  
-        
-        
 
+        <label for="customRange1" class="form-label">Porcentaje</label>       
+        <div class="porcentaje">                   
+            <div class="field">
+                <div class="value left">0</div>
+                <input formControlName="porcentaje" type="range" class="form-range" id="customRange1">        
+                <div class="value right">100</div>
+            </div>      
+        </div>        
+        
     </mat-dialog-content>
     <mat-dialog-actions align="end">
         <button type="button" (click)="cancelar()" mat-button >Cancelar</button>
