@@ -19,7 +19,7 @@ export class AutenticacionService {
 
   constructor(private http:HttpClient) { 
     console.log("El servicio de autenticación está correindo");
-    this.myAppUrl = 'https://backendportafoliosol.onrender.com/';
+    this.myAppUrl = 'https://desperate-edith-solmicielo.koyeb.app/';
     this.miApiUrl = 'auth/login'    
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
   }

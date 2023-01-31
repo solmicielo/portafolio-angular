@@ -19,7 +19,7 @@ export class PortafolioService {
   apiUrlPersona: string;
 
   constructor(private http:HttpClient) {
-    this.myAppUrl = 'https://backendportafoliosol.onrender.com/';
+    this.myAppUrl = 'https://desperate-edith-solmicielo.koyeb.app/';
     this.apiUrl = 'persona/buscar/1';
     this.apiUrlPersona = 'persona/';
     this.apiUrlEstudio = 'formacion/';
